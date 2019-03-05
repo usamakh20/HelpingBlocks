@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    title= title
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="msapplication-tap-highlight", content="no")
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    //Import Google Icon Font
+    link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
+
+    script(src="https://code.jquery.com/jquery-3.3.1.js", integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", crossorigin="anonymous")
+
+    //Materialize CSS and JavaScript
+    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+    script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+    script.
+      $(document).ready(function() {
+        $('.sidenav').sidenav();
+        $('.tooltipped').tooltip();
+      });
+
+
+    header
+      .row
+        nav.nav-wrapper.grey.darken-4
+          a(href="/" class="waves-effect waves-light center brand-logo")
+            img(src="images/logo-negative.png" style={
+              'vertical-align': 'middle',
+              'margin-bottom': '5px',
+              'margin-right': '10px'
+            } width=50)
+            span.white-text.hide-on-small-and-down(style="font-size:1.8rem;") #{title}
+
+      ul#slide-out.sidenav
+        li
+          .user-view
+            .background
+              img(src="images/office.jpg")
+              img.circle(src="images/logo.png")
+
+            a(href="#user")
+              img.circle(src="images/me.jpg")
+            a(href="#name")
+              span.white-text.name Usama Khalid
+            a(href="#email")
+              span.white-text.email usama@gmail.com
+
+        li: a(href="#!") First Link With Icon
+          i.material-icons cloud
+        li: a(href="#!") Second Link
+        li: div.divider
+        li: a.subheader Subheader
+        li: a.waves-effect Third Link With Waves
+
+    .fixed-action-btn
+      a.sidenav-trigger.btn-floating.grey.darken-4.btn-large.left-align.button-collapse.pulse(data-target="slide-out")
+        i.material-icons menu
+
+    .container
+      .row
+        block content
