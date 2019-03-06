@@ -43,7 +43,7 @@ router.post('/login',function (req,res,next) {
     })
 });
 
-router.get('/dashbord',function(req,res){
+router.get('/dashboard',function(req,res){
     if(!req.session.user)
         return res.status(401).send({message:'Login first'});
     else return res.status(200).send({message:'Welcome to Dashboard'});
