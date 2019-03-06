@@ -12,7 +12,7 @@ const usersRouter = require('./routes/users');
 const app = express();
 
 //connect to MongoDB
-mongoose.connect('mongodb://localhost/helpingblocks',{ useNewUrlParser: true,useCreateIndex:true },function(err) {
+mongoose.connect('mongodb://heroku_8ts104k3:jdbq46eau0h9ov4u8vu337vnsp@ds151805.mlab.com:51805/heroku_8ts104k3',{ useNewUrlParser: true,useCreateIndex:true },function(err) {
   if(err) return console.log(err);
   else return console.log("Successfully connected to MongoDB")
 });
