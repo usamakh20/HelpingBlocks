@@ -16,7 +16,7 @@ router.post('/register',function (req,res) {
     }).save(function(err, savedUser) {
         if (err) {
             console.log(err);
-            return res.status(500).send({message: 'error'});
+            return res.status(500).send({message: 'Server Error'});
         }
         return res.status(200).send({message: 'User is registered'});
     });
@@ -24,22 +24,22 @@ router.post('/register',function (req,res) {
 
 router.post('/login',function (req,res,next) {
     user.findOne({username:req.body.username},function(err,user) {
-        if (err) {
-            console.log(err);
-            return res.status(500).send({message: 'error'});
-        }
+        if (err)
+            return res.status(500).send({message: 'Server Error'});
+
         else if(!user)
             return res.status(404).send({message:'User not found'});
 
+        else
         // test a password with stored hash
-        user.comparePassword(req.body.password, function(err, isMatch) {
-            if (isMatch) {
-                req.session.user = user;
-                return res.send({message: "Hello " + user.firstName});
-            }
+            user.comparePassword(req.body.password, function(err, isMatch) {
+                if (isMatch) {
+                    req.session.user = user;
+                    return res.send({message: "Hello " + user.firstName});
+                }
 
-            else return res.status(401).send({message:'incorrect password'});
-        });
+                else return res.status(401).send({message:'incorrect password'});
+            });
     })
 });
 
@@ -52,6 +52,31 @@ router.get('/dashboard',function(req,res){
 router.get('/logout',function(req,res){
     req.session.destroy();
     return res.status(200).send({message:'You have been logged out!!'});
+});
+
+router.post('/donation',function (req,res,next) {
+    if(req.session.user)
+        user.updateOne({username:req.session.user.username},{$push: { donations: req.body.id}},function (err,user) {
+            if (err)
+                return res.status(500).send({message: 'Server Error'});
+
+            else return res.status(200).send({message: 'Donation id is saved'});
+
+        });
+    else return res.status(401).send({message:'Login first'});
+});
+
+router.get('/donation',function(req,res){
+    if(req.session.user)
+        user.findOne({username:req.session.user.username},function(err,user) {
+            if (err)
+                return res.status(500).send({message: 'Server Error'});
+
+            else return res.status(200).send({donation_ids: user.donations});
+
+        });
+
+    else return res.status(401).send({message:'Login first'});
 });
 
 module.exports = router;
