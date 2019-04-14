@@ -86,28 +86,31 @@ router.get('/donation',function(req,res){
 
 
 router.get('/dashboard',function(req,res){
+
     //res.sendFile(path.join(__dirname, '../views/dashboard.html'));
     res.render('dashboard');
 })
 
+
 router.get('/staff',function(req,res){
-   
+
     res.render('staff');
 })
+
 
 router.get('/maps',function(req,res){
     res.render('maps');
     
-})
+});
 
 router.get('/finances',function(req,res){
     res.render('finances');
     
-})
+});
 
 router.get('/donations',function(req,res){
     res.render('donations');
       
-})
+});
 
 module.exports = router;

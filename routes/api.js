@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 
 router.post('/register',function (req,res) {
     new user({
-        email: req.body.email,
+        username: req.body.username,
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName
@@ -25,7 +25,7 @@ router.post('/register',function (req,res) {
 });
 
 router.post('/login',function (req,res,next) {
-    user.findOne({email:req.body.email},function(err,user) {
+    user.findOne({username:req.body.username},function(err,user) {
         if (err)
             return res.status(500).send({message: 'Server Error'});
 
@@ -37,7 +37,7 @@ router.post('/login',function (req,res,next) {
             user.comparePassword(req.body.password, function(err, isMatch) {
                 if (isMatch) {
                     const token = jwt.sign({
-                        email:user.email,
+                        username:user.username,
                         userId:user._id
                     },process.env.PWD,{
                         expiresIn: "1h"
