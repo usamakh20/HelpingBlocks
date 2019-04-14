@@ -4,9 +4,6 @@ const router = express.Router();
 const user = require('../model/user');
 
 /* GET home page. */
-// router.get('/', function(req, res) {
-//     res.render('index',{title:'Helping Blocks'});
-// });
 router.get('/', function(req, res) {
     if(req.session.user)  res.redirect('/dashboard');
     else res.render('adminLogin');
@@ -40,10 +37,10 @@ router.post('/login',function (req,res,next) {
             user.comparePassword(req.body.password, function(err, isMatch) {
                 if (isMatch) {
                     req.session.user = user;
-                    res.redirect('/dashboard');  
+                    res.redirect('/dashboard');
                 }
 
-                else res.redirect('/'); 
+                else res.redirect('/');
             });
     })
 });
@@ -89,28 +86,28 @@ router.get('/dashboard',function(req,res){
 
     //res.sendFile(path.join(__dirname, '../views/dashboard.html'));
     res.render('dashboard');
-})
+});
 
 
 router.get('/staff',function(req,res){
 
     res.render('staff');
-})
+});
 
 
 router.get('/maps',function(req,res){
     res.render('maps');
-    
+
 });
 
 router.get('/finances',function(req,res){
     res.render('finances');
-    
+
 });
 
 router.get('/donations',function(req,res){
     res.render('donations');
-      
+
 });
 
 module.exports = router;

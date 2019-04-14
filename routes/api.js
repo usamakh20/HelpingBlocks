@@ -3,51 +3,33 @@ const router = express.Router();
 const user = require('../model/user');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
+const userController = require('../controller/user');
 
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index',{title:'Helping Blocks'});
 });
 
-router.post('/register',function (req,res) {
-    new user({
-        username: req.body.username,
-        password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName
-    }).save(function(err, savedUser) {
-        if (err) {
-            console.log(err);
-            return res.status(500).send({message: 'Server Error'});
-        }
-        return res.status(200).send({message: 'User is registered'});
-    });
+router.post('/register',userController.register,function (req,res) {
+    if (req.middleware.error)
+        return res.status(500).send({error: req.middleware.error});
+
+    else return res.status(200).send({message: 'User is registered'});
 });
 
-router.post('/login',function (req,res,next) {
-    user.findOne({username:req.body.username},function(err,user) {
-        if (err)
-            return res.status(500).send({message: 'Server Error'});
+router.post('/login',userController.login,function (req,res) {
+        if (req.middleware.error)
+            return res.status(500).send({error: req.middleware.error});
 
-        else if(!user)
-            return res.status(404).send({message:'User not found'});
-
-        else
-        // test a password with stored hash
-            user.comparePassword(req.body.password, function(err, isMatch) {
-                if (isMatch) {
-                    const token = jwt.sign({
-                        username:user.username,
-                        userId:user._id
-                    },process.env.PWD,{
-                        expiresIn: "1h"
-                    });
-                    return res.status(200).send({message: "Auth Successful",token:token});
-                }
-
-                else return res.status(401).send({message:'incorrect password'});
+        else {
+            const token = jwt.sign({
+                userId: req.body.usernumber,
+                client_token: req.middleware.client_token
+            }, process.env.PWD, {
+                expiresIn: "1h"
             });
-    })
+            return res.status(200).send({message: "Auth Successful", token: token});
+        }
 });
 
 router.get('/dashboard',auth,function(req,res){

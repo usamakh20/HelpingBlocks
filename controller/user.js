@@ -11,23 +11,61 @@ exports.register = (req,res,next) => {
             policy: "username"
         })
         .then(result => {
-            return res.status(200).send({message: 'User is registered'});
+            req.middleware = {message : result};
+            next()
         })
         .catch(error => {
-            return res.status(500).send({error: error});
+            req.middleware = {error: error};
+            next()
         });
-
 };
 
 
-exports.login = ()=>{
-    superAgent.post(baseUrl+'')
+exports.login = (req,res,next) => {
+    superAgent.post(baseUrl+'auth/userpass/login/'+req.body.usernumber)
         .set(Header)
-        .send({})
+        .send({
+            password:req.body.password
+        })
         .then(result => {
-            return res.status(200).send({message: "Auth Successful",token:result.auth.client_token});
+            req.middleware = {message : result.auth};
+            next()
         })
         .catch(error => {
-            return res.status(401).send({message: 'Auth failed'});
+            req.middleware = {error: error.response.body};
+            next()
+        });
+};
+
+exports.registerEthereum = (req,res,next) => {
+    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.usernumber)
+        .set(Header)
+        .send()
+        .then(result => {
+            req.middleware = {message : result.data};
+            next()
+        })
+        .catch(error => {
+            req.middleware = {error: error};
+            next()
+        });
+};
+
+
+exports.signTX = (req,res,next) => {
+    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.usernumber+'sign-tx')
+        .set(Header)
+        .send({
+            amount:req.body.amount,
+            to:req.body.to,
+            data:req.body.transaction_data
+        })
+        .then(result => {
+            req.middleware = {message : result};
+            next()
+        })
+        .catch(error => {
+            req.middleware = {error: error};
+            next()
         });
 };
