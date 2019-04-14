@@ -1,0 +1,22 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+  title Admin Login
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
+  link(rel='stylesheet' href='stylesheets/styles.min.css')
+.login-dark
+  form(method='post' action='/login')
+    h2.sr-only Login Form
+    .illustration
+      i.icon.ion-ios-locked-outline
+    .form-group
+      input.form-control(type='text' name='username' placeholder='Username')
+    .form-group
+      input.form-control(type='password' name='password' placeholder='Password')
+    .form-group
+      button.btn.btn-primary.btn-block(type='submit') Log In
+    a.forgot(href='#') Forgot your email or password?
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js')
