@@ -2,51 +2,41 @@ const express = require('express');
 var path = require('path');
 const router = express.Router();
 const user = require('../model/user');
+const userController = require('../controller/user');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    if(req.session.user)  res.redirect('/dashboard');
+    if(req.session.userData)  res.redirect('/dashboard');
     else res.render('adminLogin');
 });
 
-router.post('/register',function (req,res) {
-    new user({
-        username: req.body.username,
-        password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName
-    }).save(function(err, savedUser) {
-        if (err) {
-            console.log(err);
-            return res.status(500).send({message: 'Server Error'});
-        }
-        return res.status(200).send({message: 'User is registered'});
-    });
-});
+// router.post('/register',function (req,res) {
+//     new user({
+//         username: req.body.username,
+//         password: req.body.password,
+//         firstName: req.body.firstName,
+//         lastName: req.body.lastName
+//     }).save(function(err, savedUser) {
+//         if (err) {
+//             console.log(err);
+//             return res.status(500).send({message: 'Server Error'});
+//         }
+//         return res.status(200).send({message: 'User is registered'});
+//     });
+// });
 
-router.post('/login',function (req,res,next) {
-    user.findOne({username:req.body.username},function(err,user) {
-        if (err)
-            return res.status(500).send({message: 'Server Error'});
+router.post('/login',userController.login,function (req,res,next) {
+    if (req.middleware.error)
+        return res.redirect('/');
 
-        else if(!user)
-            return res.redirect('/');
-
-        else
-        // test a password with stored hash
-            user.comparePassword(req.body.password, function(err, isMatch) {
-                if (isMatch) {
-                    req.session.user = user;
-                    res.redirect('/dashboard');
-                }
-
-                else res.redirect('/');
-            });
-    })
+    else {
+        req.session.userData = req.middleware;
+        return res.redirect('/dashboard');
+    }
 });
 
 router.get('/test',function(req,res){
-    if(!req.session.user)
+    if(!req.session.userData)
         return res.status(401).send({message:'Login first'});
     else return res.status(200).send({message:'Welcome to Dashboard'});
 });
@@ -57,8 +47,8 @@ router.get('/logout',function(req,res){
 });
 
 router.post('/donation',function (req,res,next) {
-    if(req.session.user)
-        user.updateOne({username:req.session.user.username},{$push: { donations: req.body.id}},function (err,user) {
+    if(req.session.userData)
+        user.updateOne({username:req.session.userData.username},{$push: { donations: req.body.id}},function (err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -69,8 +59,8 @@ router.post('/donation',function (req,res,next) {
 });
 
 router.get('/donation',function(req,res){
-    if(req.session.user)
-        user.findOne({username:req.session.user.username},function(err,user) {
+    if(req.session.userData)
+        user.findOne({username:req.session.userData.username},function(err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -83,14 +73,11 @@ router.get('/donation',function(req,res){
 
 
 router.get('/dashboard',function(req,res){
-
-    //res.sendFile(path.join(__dirname, '../views/dashboard.html'));
     res.render('dashboard');
 });
 
 
 router.get('/staff',function(req,res){
-
     res.render('staff');
 });
 
