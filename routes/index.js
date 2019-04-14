@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 
 router.post('/register',function (req,res) {
     new user({
-        email: req.body.email,
+        username: req.body.username,
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName
@@ -24,7 +24,7 @@ router.post('/register',function (req,res) {
 });
 
 router.post('/login',function (req,res,next) {
-    user.findOne({email:req.body.email},function(err,user) {
+    user.findOne({username:req.body.username},function(err,user) {
         if (err)
             return res.status(500).send({message: 'Server Error'});
 
@@ -57,7 +57,7 @@ router.get('/logout',function(req,res){
 
 router.post('/donation',function (req,res,next) {
     if(req.session.user)
-        user.updateOne({email:req.session.user.email},{$push: { donations: req.body.id}},function (err,user) {
+        user.updateOne({username:req.session.user.username},{$push: { donations: req.body.id}},function (err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -69,7 +69,7 @@ router.post('/donation',function (req,res,next) {
 
 router.get('/donation',function(req,res){
     if(req.session.user)
-        user.findOne({email:req.session.user.email},function(err,user) {
+        user.findOne({username:req.session.user.username},function(err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -105,6 +105,9 @@ router.get('/donations',function(req,res){
     res.sendFile(path.join(__dirname, '../views/donations.html'));
       
 })
-
+router.get('/adminLogin',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/adminLogin.html'));
+      
+})
 
 module.exports = router;
