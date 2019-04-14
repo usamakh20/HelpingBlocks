@@ -1,4 +1,5 @@
 const express = require('express');
+var path = require('path');
 const router = express.Router();
 const user = require('../model/user');
 
@@ -9,7 +10,7 @@ router.get('/', function(req, res) {
 
 router.post('/register',function (req,res) {
     new user({
-        email: req.body.email,
+        username: req.body.username,
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName
@@ -23,7 +24,7 @@ router.post('/register',function (req,res) {
 });
 
 router.post('/login',function (req,res,next) {
-    user.findOne({email:req.body.email},function(err,user) {
+    user.findOne({username:req.body.username},function(err,user) {
         if (err)
             return res.status(500).send({message: 'Server Error'});
 
@@ -43,7 +44,7 @@ router.post('/login',function (req,res,next) {
     })
 });
 
-router.get('/dashboard',function(req,res){
+router.get('/test',function(req,res){
     if(!req.session.user)
         return res.status(401).send({message:'Login first'});
     else return res.status(200).send({message:'Welcome to Dashboard'});
@@ -56,7 +57,7 @@ router.get('/logout',function(req,res){
 
 router.post('/donation',function (req,res,next) {
     if(req.session.user)
-        user.updateOne({email:req.session.user.email},{$push: { donations: req.body.id}},function (err,user) {
+        user.updateOne({username:req.session.user.username},{$push: { donations: req.body.id}},function (err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -68,7 +69,7 @@ router.post('/donation',function (req,res,next) {
 
 router.get('/donation',function(req,res){
     if(req.session.user)
-        user.findOne({email:req.session.user.email},function(err,user) {
+        user.findOne({username:req.session.user.username},function(err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -78,5 +79,35 @@ router.get('/donation',function(req,res){
 
     else return res.status(401).send({message:'Login first'});
 });
+
+
+router.get('/dashboard',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/dashboard.html'));
+    
+})
+
+router.get('/staff',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/staff.html'));
+   
+})
+
+router.get('/maps',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/maps.html'));
+    
+})
+
+router.get('/finances',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/finances.html'));
+    
+})
+
+router.get('/donations',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/donations.html'));
+      
+})
+router.get('/adminLogin',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/adminLogin.html'));
+      
+})
 
 module.exports = router;
