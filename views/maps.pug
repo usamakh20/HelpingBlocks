@@ -1,0 +1,56 @@
+extends layout2
+
+block content 
+    nav.navbar.navbar-default.navbar-fixed
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Maps
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-left
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                i.fa.fa-globe
+                b.caret.hidden-sm.hidden-xs
+                span.notification.hidden-sm.hidden-xs 5
+                p.hidden-lg.hidden-md
+                  | 2 Notifications
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Notification 1
+                li
+                  a(href='#') Notification 2
+          ul.nav.navbar-nav.navbar-right
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                p
+                  | Options
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Option
+                li
+                  a(href='#') Option 2
+                li
+                  a(href='#') Option 3
+                li
+                  a(href='#') Option 3
+                li.divider
+                li
+                  a(href='#') Separated Option
+            li
+              a(href='#')
+                p Log out
+            li.separator.hidden-lg.hidden-md
+    #map
+    script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyClD8BTJRTSKYEETlU5813tNdBQZbUO4M8')
+    script(src='javascripts/demo.js')
+    script.
+     $().ready(function(){
+     demo.initGoogleMaps();
+     });

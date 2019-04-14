@@ -1,0 +1,197 @@
+extends layout2
+
+block content 
+    nav.navbar.navbar-default.navbar-fixed
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Manage Finances
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-left
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                i.fa.fa-globe
+                b.caret.hidden-sm.hidden-xs
+                span.notification.hidden-sm.hidden-xs 5
+                p.hidden-lg.hidden-md
+                  | 2 Notifications
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Notification 1
+                li
+                  a(href='#') Notification 2
+            //
+              <li>
+              <a href="">
+              <i class="fa fa-search"></i>
+              <p class="hidden-lg hidden-md">Search</p>
+              </a>
+              </li>
+          ul.nav.navbar-nav.navbar-right
+            //
+              <li>
+              <a href="">
+              <p>Account</p>
+              </a>
+              </li>
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                p
+                  | Options
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Action
+                li
+                  a(href='#') Action 2
+                li
+                  a(href='#') Action 3
+                li
+                  a(href='#') Action 4
+                li
+                  a(href='#') Something
+                li.divider
+                li
+                  a(href='#') Separated link
+            li
+              a(href='#')
+                p Log out
+            li.separator.hidden-lg.hidden-md
+    .col-md-8
+      .card
+        .header
+          h4.title Pay Shopkeeper
+        .content
+          form
+            .row
+              .col-md-6
+                .form-group
+                  label Name
+                  input.form-control(type='text' placeholder='Full Name' value='')
+              .col-md-6
+                .form-group
+                  label Amount
+                  input.form-control(type='text' placeholder='Amount' value='')
+              .col-md-6
+                .form-group
+                  label ID
+                  input.form-control(type='text' placeholder='ID' value='')
+            button.btn.btn-info.btn-fill.pull-right(type='submit') Pay
+            .clearfix
+    .content
+      .container-fluid
+        .row
+          .col-md-12
+            .card
+              .header
+                h4.title Donation Info List
+                p.category List of transactions and Recipients
+              .content.table-responsive.table-full-width
+                table.table.table-hover.table-striped
+                  thead
+                    th ID
+                    th Name
+                    th Date
+                    th Amount
+                    th TransactionCode
+                    th Action
+                  tbody
+                    tr
+                      td 1
+                      td Suchal Rice
+                      td 3 Mar
+                      td Rs. 9000
+                      td cxyTT6p9o
+                      td
+                        button.btn.btn-info.btn-fill Edit
+                        button.btn.btn-danger.btn-fill Remove
+                    tr
+                      td 2
+                      td Awais Hooper
+                      td 8 Mar
+                      td Rs. 2000
+                      td vvu490Ui9
+                      td
+                    tr
+                      td 3
+                      td Usama Rodriguez
+                      td 15 Mar
+                      td Rs. 11000
+                      td qqo883cP0
+                      td
+                    tr
+                      td 4
+                      td Philip Malik
+                      td 20 Mar
+                      td Rs. 35000
+                      td zeePL951A
+                      td
+                    tr
+                      td 5
+                      td Maaz Greene
+                      td 20 Mar
+                      td Rs. 300
+                      td PqsXt6330
+                      td
+                    tr
+                      td 6
+                      td Saad Porter
+                      td 2 Mar
+                      td Rs. 50
+                      td ai0kRk5r2
+                      td
+          .col-md-12
+            .card.card-plain
+              .header
+                h4.title Withdrawals List
+                p.category List of withdraws
+              .content.table-responsive.table-full-width
+                table.table.table-hover
+                  thead
+                    th ID
+                    th Name
+                    th Date
+                    th Amount
+                    th Reamining
+                  tbody
+                    tr
+                      td 1
+                      td Suchal Rice
+                      td 3 Mar
+                      td Rs. 3000
+                      td Rs. 0
+                    tr
+                      td 2
+                      td Awais Hooper
+                      td 5 Mar
+                      td Rs. 1500
+                      td Rs. 0
+                    tr
+                      td 3
+                      td Usama Rodriguez
+                      td 16 Mar
+                      td Rs. 2000
+                      td Rs. 3000
+                    tr
+                      td 4
+                      td Philip Malik
+                      td 20 Mar
+                      td Rs. 20000
+                      td Rs. 15000
+                    tr
+                      td 5
+                      td Maaz Greene
+                      td Mar 20
+                      td Rs. 3000
+                      td Rs. 0
+                    tr
+                      td 6
+                      td Saad Porter
+                      td Mar 21
+                      td Rs. 40
+                      td Rs. 10

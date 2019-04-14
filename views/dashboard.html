@@ -29,7 +29,65 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="stylesheets/pe-icon-7-stroke.css" rel="stylesheet" />
+ <!--   Core JS Files   -->
+ <script src="javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+ <script src="javascripts/bootstrap.min.js" type="text/javascript"></script>
 
+ <!--  Charts Plugin -->
+ <script src="javascripts/chartist.min.js"></script>
+
+ <!--  Notifications Plugin    -->
+ <script src="javascripts/bootstrap-notify.js"></script>
+
+ <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+ <script src="javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+ <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+ <script src="javascripts/demo.js"></script>
+
+ <script type="text/javascript">
+     $(document).ready(function(){
+
+         demo.initChartist();
+
+         $.notify({
+             icon: 'pe-7s-gift',
+             message: "Welcome to <b>HelpingBlock</b>."
+
+         },{
+             type: 'info',
+             timer: 100
+         });
+         $.notify({
+             icon: 'pe-7s-paint-bucket',
+             message: "Recieved new <b>Donation</b>."
+
+         },{
+             type: 'success',
+             timer: 100
+         });
+
+         $.notify({
+             icon: 'pe-7s-paint-bucket',
+             message: "Recieved new <b>Donation</b>."
+
+         },{
+             type: 'success',
+             timer: 100
+         });
+        
+         $.notify({
+             icon: 'pe-7s-look',
+             message: "Daily donation average <b>Dropped</b>."
+
+         },{
+             type: 'warning',
+             timer: 100
+         });
+
+
+     });
+ </script>
 </head>
 <body>
 
@@ -348,65 +406,4 @@
     </div>
 </div>
 </body>
-
-    <!--   Core JS Files   -->
-    <script src="javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
-	<script src="javascripts/bootstrap.min.js" type="text/javascript"></script>
-
-	<!--  Charts Plugin -->
-	<script src="javascripts/chartist.min.js"></script>
-
-    <!--  Notifications Plugin    -->
-    <script src="javascripts/bootstrap-notify.js"></script>
-
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="javascripts/light-bootstrap-dashboard.js?v=1.4.0"></script>
-
-	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-	<script src="javascripts/demo.js"></script>
-
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>HelpingBlock</b>."
-
-            },{
-                type: 'info',
-                timer: 100
-            });
-            $.notify({
-            	icon: 'pe-7s-paint-bucket',
-            	message: "Recieved new <b>Donation</b>."
-
-            },{
-                type: 'success',
-                timer: 100
-            });
-
-            $.notify({
-            	icon: 'pe-7s-paint-bucket',
-            	message: "Recieved new <b>Donation</b>."
-
-            },{
-                type: 'success',
-                timer: 100
-            });
-           
-            $.notify({
-            	icon: 'pe-7s-look',
-            	message: "Daily donation average <b>Dropped</b>."
-
-            },{
-                type: 'warning',
-                timer: 100
-            });
-
-
-    	});
-	</script>
-
 </html>

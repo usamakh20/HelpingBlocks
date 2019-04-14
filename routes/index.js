@@ -4,8 +4,12 @@ const router = express.Router();
 const user = require('../model/user');
 
 /* GET home page. */
+// router.get('/', function(req, res) {
+//     res.render('index',{title:'Helping Blocks'});
+// });
 router.get('/', function(req, res) {
-    res.render('index',{title:'Helping Blocks'});
+    if(req.session.user)  res.redirect('/dashboard');
+    else res.render('adminLogin');
 });
 
 router.post('/register',function (req,res) {
@@ -29,17 +33,17 @@ router.post('/login',function (req,res,next) {
             return res.status(500).send({message: 'Server Error'});
 
         else if(!user)
-            return res.status(404).send({message:'User not found'});
+            return res.redirect('/');
 
         else
         // test a password with stored hash
             user.comparePassword(req.body.password, function(err, isMatch) {
                 if (isMatch) {
                     req.session.user = user;
-                    return res.send({message: "Hello " + user.firstName});
+                    res.redirect('/dashboard');  
                 }
 
-                else return res.status(401).send({message:'incorrect password'});
+                else res.redirect('/'); 
             });
     })
 });
@@ -82,31 +86,27 @@ router.get('/donation',function(req,res){
 
 
 router.get('/dashboard',function(req,res){
-    res.sendFile(path.join(__dirname, '../views/dashboard.html'));
-    
+    //res.sendFile(path.join(__dirname, '../views/dashboard.html'));
+    res.render('dashboard');
 })
 
 router.get('/staff',function(req,res){
-    res.sendFile(path.join(__dirname, '../views/staff.html'));
    
+    res.render('staff');
 })
 
 router.get('/maps',function(req,res){
-    res.sendFile(path.join(__dirname, '../views/maps.html'));
+    res.render('maps');
     
 })
 
 router.get('/finances',function(req,res){
-    res.sendFile(path.join(__dirname, '../views/finances.html'));
+    res.render('finances');
     
 })
 
 router.get('/donations',function(req,res){
-    res.sendFile(path.join(__dirname, '../views/donations.html'));
-      
-})
-router.get('/adminLogin',function(req,res){
-    res.sendFile(path.join(__dirname, '../views/adminLogin.html'));
+    res.render('donations');
       
 })
 

@@ -1,0 +1,195 @@
+extends layout2
+
+block content  
+    nav.navbar.navbar-default.navbar-fixed
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Manage Donations
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-left
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                i.fa.fa-globe
+                b.caret.hidden-sm.hidden-xs
+                span.notification.hidden-sm.hidden-xs 5
+                p.hidden-lg.hidden-md
+                  | 2 Notifications
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Notification 1
+                li
+                  a(href='#') Notification 2
+          ul.nav.navbar-nav.navbar-right
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                p
+                  | Options
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Option
+                li
+                  a(href='#') Option 2
+                li
+                  a(href='#') Option 3
+                li
+                  a(href='#') Option 3
+                li.divider
+                li
+                  a(href='#') Separated Option
+            li
+              a(href='#')
+                p Log out
+            li.separator.hidden-lg.hidden-md
+    .col-md-8
+      .card
+        .header
+          h4.title Create Donaion Schedule
+        .content
+          form
+            .row
+              .col-md-6
+                .form-group
+                  label Name
+                  input.form-control(type='text' placeholder='Full Name' value='')
+              .col-md-6
+                .form-group
+                  label Schedule
+                  select.form-control
+                    option(value='Weekly') Weekly
+                    option(value='Monthly') Monthly
+                    option(value='Every 2 Months') Every 2 Months
+                    option(value='Every 3 Months') Every 3 Months
+            .row
+              .col-md-12
+                .form-group
+                  label Address
+                  input.form-control(type='text' placeholder='Home Address' value='Machar Colony, Dhok Hassu')
+            .row
+              .col-md-4
+                .form-group
+                  label City
+                  input.form-control(type='text' placeholder='City' value='')
+              .col-md-4
+                .form-group
+                  label Amount Recieveable
+                  input.form-control(type='number' placeholder='Rs. 1000')
+            button.btn.btn-info.btn-fill.pull-right(type='submit') Add
+            .clearfix
+    .content
+      .container-fluid
+        .row
+          .col-md-12
+            .card
+              .header
+                h4.title Recipients List
+                p.category List of Recipients
+              .content.table-responsive.table-full-width
+                table.table.table-hover.table-striped
+                  thead
+                    th ID
+                    th Name
+                    th Schedule
+                    th Recieveable
+                    th City
+                    th Action
+                  tbody
+                    tr
+                      td 1
+                      td Suchal Rice
+                      td Monthly
+                      td Rs. 9000
+                      td Lahore
+                      td
+                    tr
+                      td 2
+                      td Awais Hooper
+                      td Weekly
+                      td Rs. 2000
+                      td Gujrat
+                      td
+                    tr
+                      td 3
+                      td Usama Rodriguez
+                      td Monthly
+                      td Rs. 11000
+                      td Karachi
+                      td
+                    tr
+                      td 4
+                      td Philip Malik
+                      td Every 3 Months
+                      td Rs. 35000
+                      td Islamabad
+                      td
+                    tr
+                      td 5
+                      td Maaz Greene
+                      td Daily
+                      td Rs. 300
+                      td Khanapul
+                      td
+                    tr
+                      td 6
+                      td Saad Porter
+                      td Hourly
+                      td Rs. 50
+                      td WahCantt
+                      td
+          .col-md-12
+            .card.card-plain
+              .header
+                h4.title Donors List
+                p.category List of Donors
+              .content.table-responsive.table-full-width
+                table.table.table-hover
+                  thead
+                    th ID
+                    th Name
+                    th Schedule
+                    th Amount
+                    th Action
+                  tbody
+                    tr
+                      td 1
+                      td Suchal Rice
+                      td Monthly
+                      td Rs. 3000
+                      td
+                    tr
+                      td 2
+                      td Awais Hooper
+                      td Weekly
+                      td Rs. 1500
+                      td
+                    tr
+                      td 3
+                      td Usama Rodriguez
+                      td Monthly
+                      td Rs. 5000
+                      td
+                    tr
+                      td 4
+                      td Philip Malik
+                      td Every 3 Months
+                      td Rs. 2000
+                      td
+                    tr
+                      td 5
+                      td Maaz Greene
+                      td Daily
+                      td Rs. 3000
+                      td
+                    tr
+                      td 6
+                      td Saad Porter
+                      td Hourly
+                      td Rs. 4000
+                      td
+
