@@ -1,4 +1,5 @@
 const express = require('express');
+var path = require('path');
 const router = express.Router();
 const user = require('../model/user');
 
@@ -43,7 +44,7 @@ router.post('/login',function (req,res,next) {
     })
 });
 
-router.get('/dashboard',function(req,res){
+router.get('/test',function(req,res){
     if(!req.session.user)
         return res.status(401).send({message:'Login first'});
     else return res.status(200).send({message:'Welcome to Dashboard'});
@@ -78,5 +79,32 @@ router.get('/donation',function(req,res){
 
     else return res.status(401).send({message:'Login first'});
 });
+
+
+router.get('/dashboard',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/dashboard.html'));
+    
+})
+
+router.get('/staff',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/staff.html'));
+   
+})
+
+router.get('/maps',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/maps.html'));
+    
+})
+
+router.get('/finances',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/finances.html'));
+    
+})
+
+router.get('/donations',function(req,res){
+    res.sendFile(path.join(__dirname, '../views/donations.html'));
+      
+})
+
 
 module.exports = router;
