@@ -23,7 +23,7 @@ router.post('/login',userController.login,function (req,res) {
 
         else {
             const token = jwt.sign({
-                userId: req.body.usernumber,
+                userId: req.body.username,
                 client_token: req.middleware.client_token
             }, process.env.PWD, {
                 expiresIn: "1h"

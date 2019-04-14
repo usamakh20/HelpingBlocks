@@ -26,8 +26,10 @@ router.get('/', function(req, res) {
 // });
 
 router.post('/login',userController.login,function (req,res,next) {
-    if (req.middleware.error)
+    if (req.middleware.error) {
+        console.log(req.middleware.error);
         return res.redirect('/');
+    }
 
     else {
         req.session.userData = req.middleware;

@@ -3,10 +3,10 @@ const baseUrl = "https://helpingblocks-vault.tk:8200/v1/";
 const Header = {'Content-Type':'application/json','Authorization':'Bearer s.WYKgPlPQ6speT256Y6rCdyC2' };
 
 exports.register = (req,res,next) => {
-    superAgent.post(baseUrl+'auth/userpass/users/'+req.body.usernumber)
+    superAgent.post(baseUrl+'auth/userpass/users/'+req.body.username)
         .set(Header)
         .send({
-            username: req.body.usernumber,
+            username: req.body.username,
             password: req.body.password,
             policy: "username"
         })
@@ -22,7 +22,7 @@ exports.register = (req,res,next) => {
 
 
 exports.login = (req,res,next) => {
-    superAgent.post(baseUrl+'auth/userpass/login/'+req.body.usernumber)
+    superAgent.post(baseUrl+'auth/userpass/login/'+req.body.username)
         .set(Header)
         .send({
             password:req.body.password
@@ -38,7 +38,7 @@ exports.login = (req,res,next) => {
 };
 
 exports.registerEthereum = (req,res,next) => {
-    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.usernumber)
+    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.username)
         .set(Header)
         .send()
         .then(result => {
@@ -53,7 +53,7 @@ exports.registerEthereum = (req,res,next) => {
 
 
 exports.signTX = (req,res,next) => {
-    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.usernumber+'sign-tx')
+    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.username+'sign-tx')
         .set(Header)
         .send({
             amount:req.body.amount,
