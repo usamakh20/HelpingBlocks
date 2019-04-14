@@ -83,31 +83,25 @@ router.get('/donation',function(req,res){
 
 router.get('/dashboard',function(req,res){
     res.sendFile(path.join(__dirname, '../views/dashboard.html'));
-    
 });
 
 router.get('/staff',function(req,res){
     res.sendFile(path.join(__dirname, '../views/staff.html'));
-   
 });
 
 router.get('/maps',function(req,res){
     res.sendFile(path.join(__dirname, '../views/maps.html'));
-    
 });
 
 router.get('/finances',function(req,res){
     res.sendFile(path.join(__dirname, '../views/finances.html'));
-    
 });
 
 router.get('/donations',function(req,res){
     res.sendFile(path.join(__dirname, '../views/donations.html'));
-      
 });
 router.get('/adminLogin',function(req,res){
     res.sendFile(path.join(__dirname, '../views/adminLogin.html'));
-      
 });
 
 module.exports = router;

@@ -42,7 +42,7 @@ router.post('/login',function (req,res,next) {
                     },process.env.PWD,{
                         expiresIn: "1h"
                     });
-                    return res.send({message: "Auth Successful",token:token});
+                    return res.status(200).send({message: "Auth Successful",token:token});
                 }
 
                 else return res.status(401).send({message:'incorrect password'});

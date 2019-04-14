@@ -2447,13 +2447,13 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .ct-label.ct-horizontal.ct-start {
-    -webkit-box-align: flex-end;
+    /*-webkit-box-align: flex-end;*/
     -webkit-align-items: flex-end;
-    -ms-flex-align: flex-end;
+    /*-ms-flex-align: flex-end;*/
     align-items: flex-end;
-    -webkit-box-pack: flex-start;
+    /*-webkit-box-pack: flex-start;*/
     -webkit-justify-content: flex-start;
-    -ms-flex-pack: flex-start;
+    /*-ms-flex-pack: flex-start;*/
     justify-content: flex-start;
     text-align: left;
     text-anchor: start;

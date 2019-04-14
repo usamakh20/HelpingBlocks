@@ -1,79 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d107351-52a9-4e14-80a7-355fdc736ada" name="Default Changelist" comment="some changes">
-      <change beforePath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/Pe-icon-7-stroke.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/default-avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/default-avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/face-7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/face-7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/faces/tim_vector.jpe" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/faces/tim_vector.jpe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/full-screen-image-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/full-screen-image-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/loading-bubbles.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/loading-bubbles.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/mask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/new_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/new_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/sidebar-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/sidebar-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/sidebar-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/sidebar-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/sidebar-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/sidebar-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/sidebar-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/sidebar-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/sidebar-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/sidebar-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/tim_80x80.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/tim_80x80.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bootstrap-notify.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bootstrap-notify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chartist.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chartist.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/jquery.3.2.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/jquery.3.2.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/light-bootstrap-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/light-bootstrap-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_alerts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_cards.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_chartist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_chartist.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_checkbox-radio-switch.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_checkbox-radio-switch.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_dropdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_footers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_footers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_inputs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_misc.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_misc.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_navbars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_responsive.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_sidebar-and-main-panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_sidebar-and-main-panel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_tables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_cards.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_chartist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_chartist.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_inputs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_labels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_labels.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_morphing-buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_morphing-buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_navbars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_social-buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_social-buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_tabs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_transparency.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_transparency.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/lbd/mixins/_vendor-prefixes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/lbd/mixins/_vendor-prefixes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/light-bootstrap-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/light-bootstrap-dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/animate.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/animate.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/demo.css" afterDir="false" />
+    <list default="true" id="4d107351-52a9-4e14-80a7-355fdc736ada" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controller/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/light-bootstrap-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/light-bootstrap-dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/pe-icon-7-stroke.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/pe-icon-7-stroke.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/donations.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/donations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/finances.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/finances.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/maps.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/maps.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,20 +19,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="288">
+              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="672">
+              <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -104,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middleware/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+            <state relative-caret-position="240">
+              <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -132,14 +77,15 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>error</find>
-      <find>email</find>
       <find>session</find>
       <find>username</find>
+      <find>email</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>Server Error</replace>
       <replace>email</replace>
+      <replace>username</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -157,10 +103,12 @@
         <option value="$PROJECT_DIR$/views/footer.pug" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/model/user.js" />
-        <option value="$PROJECT_DIR$/middleware/auth.js" />
-        <option value="$PROJECT_DIR$/routes/api.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/light-bootstrap-dashboard.css" />
+        <option value="$PROJECT_DIR$/middleware/auth.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/routes/api.js" />
+        <option value="$PROJECT_DIR$/controller/user.js" />
       </list>
     </option>
   </component>
@@ -188,7 +136,17 @@
             <path>
               <item name="HelpingBlocks" type="b2602c69:ProjectViewProjectNode" />
               <item name="HelpingBlocks" type="462c0819:PsiDirectoryNode" />
+              <item name=".vscode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelpingBlocks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelpingBlocks" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelpingBlocks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelpingBlocks" type="462c0819:PsiDirectoryNode" />
+              <item name="middleware" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HelpingBlocks" type="b2602c69:ProjectViewProjectNode" />
@@ -199,6 +157,12 @@
               <item name="HelpingBlocks" type="b2602c69:ProjectViewProjectNode" />
               <item name="HelpingBlocks" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelpingBlocks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelpingBlocks" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HelpingBlocks" type="b2602c69:ProjectViewProjectNode" />
@@ -286,17 +250,31 @@
       <option name="project" value="LOCAL" />
       <updated>1555006414842</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some changes">
+      <created>1555243017580</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555243017580</updated>
+    </task>
+    <task id="LOCAL-00003" summary="some changes">
+      <created>1555243113756</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555243113756</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22476000" />
+    <option name="totallyTimeSpent" value="27157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2113127" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2113127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -350,9 +328,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/contract.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -377,27 +352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js" />
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -406,38 +360,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/auth.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/light-bootstrap-dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="-2034">
+          <caret line="2452" column="26" lean-forward="true" selection-start-line="2452" selection-start-column="26" selection-end-line="2452" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vscode/launch.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="240">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/views/index.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state relative-caret-position="240">
+          <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/light-bootstrap-dashboard.css">
+    <entry file="file://$PROJECT_DIR$/views/layout.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="2458" column="23" lean-forward="true" selection-start-line="2458" selection-start-column="23" selection-end-line="2458" selection-end-column="23" />
+        <state relative-caret-position="-84">
+          <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
         </state>
       </provider>
     </entry>
