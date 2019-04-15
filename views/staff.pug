@@ -47,6 +47,7 @@ block content
               a(href='#')
                 p Log out
             li.separator.hidden-lg.hidden-md
+    br
     .col-md-8
       .card
         .header
@@ -57,128 +58,208 @@ block content
               .col-md-5
                 .form-group
                   label NGO (disabled)
-                  input.form-control(type='text' disabled='' placeholder='Company' value='Creative Code Inc.')
-              .col-md-3
-                .form-group
-                  label Username
-                  input.form-control(type='text' placeholder='Username' value='michael23')
+                  input.form-control(type='text' disabled='' placeholder='NGO' value='NGO NAME Inc.')              
+            .row
               .col-md-4
                 .form-group
-                  label(for='exampleInputEmail1') Email address
-                  input.form-control(type='email' placeholder='Email')
+                  label Name
+                  input.form-control(type='text' placeholder='Name')
+              .col-md-4
+                .form-group
+                  label CNIC
+                  input.form-control(type='number'  maxlength="13" size="13") 
+              
+              .col-md-3
+                .form-group
+                  label Role
+                  select.form-control
+                    option(value='Admin') Admin
+                    option(value='Guard') Guard
+                    option(value='Accountant') Accountant
+                    option(value='IT Support') IT Support
             .row
-              .col-md-6
+              .col-md-4
                 .form-group
-                  label First Name
-                  input.form-control(type='text' placeholder='Company' value='Mike')
-              .col-md-6
+                  label Contact No.
+                  input.form-control(type='text' placeholder='Contact No.')
+              .col-md-4
                 .form-group
-                  label Last Name
-                  input.form-control(type='text' placeholder='Last Name' value='Andrew')
+                  label Email
+                  input.form-control(type='email' placeholder='Email')
+              .col-md-4
+                .form-group
+                  label Password
+                  input.form-control(type='password' placeholder='Password')
             .row
               .col-md-12
                 .form-group
                   label Address
-                  input.form-control(type='text' placeholder='Home Address' value='Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09')
+                  input.form-control(type='text' placeholder='Home Address')
             .row
               .col-md-4
                 .form-group
                   label City
-                  input.form-control(type='text' placeholder='City' value='Mike')
-              .col-md-4
-                .form-group
-                  label Postal Code
-                  input.form-control(type='number' placeholder='ZIP Code')
-              .col-md-4
-                .form-group
-                  label Role
-                  select.form-control
-                    option(value='volvo') Admin
-                    option(value='saab') Guard
-                    option(value='opel') Accountant
-                    option(value='audi') IT Support
-            .row
-              .col-md-12
-                .form-group
-                  label About Me
-                  textarea.form-control(rows='5' placeholder='Here can be your description' value='Mike') Lamborghini Mercy, Your chick she so thirsty, I&apos;m in that two seat Lambo.
-            button.btn.btn-info.btn-fill.pull-right(type='submit') Add Profile
+                  input.form-control(type='text' placeholder='City')
+              
+            button.btn.btn-info.btn-fill.pull-right(type='submit') Add Staff Member
             .clearfix
+    
+    //- .col-md-8
+    //-   .card
+    //-     .header
+    //-       h4.title Add Admin
+    //-     .content
+    //-       form
+    //-         .row
+    //-           .col-md-4
+    //-             .form-group
+    //-               label Name
+    //-               input.form-control(type='text' placeholder='Name')
+    //-           .col-md-4
+    //-             .form-group
+    //-               label Username
+    //-               input.form-control(type='text' placeholder='Username')
+    //-           .col-md-4
+    //-             .form-group
+    //-               label Contact No.
+    //-               input.form-control(type='text' placeholder='Contact No.')
+              
+    //-         .row
+    //-           .col-md-4
+    //-             .form-group
+    //-               label Email
+    //-               input.form-control(type='email' placeholder='Email')
+    //-           .col-md-4
+    //-             .form-group
+    //-               label Password
+    //-               input.form-control(type='password' placeholder='Password')
+              
+    //-         .row
+    //-           .col-md-12
+    //-             .form-group
+    //-               label Address
+    //-               input.form-control(type='text' placeholder='Address')
+    //-         .row  
+    //-           .col-md-4
+    //-             .form-group
+    //-               label City
+    //-               input.form-control(type='text' placeholder='City' value='')  
+    //-           .col-md-4
+    //-             .form-group
+    //-               label CNIC
+    //-               input.form-control(type='number'  maxlength="13" size="13")    
+    //-         button.btn.btn-info.btn-fill.pull-right(type='submit') Add Admin
+    //-         .clearfix
     .content
       .container-fluid
         .row
           .col-md-12
             .card
               .header
-                h4.title Employss List
-                p.category List of Staff Memebers
+                h4.title Employees List
+                p.category List of Staff Members
               .content.table-responsive.table-full-width
                 table.table.table-hover.table-striped
                   thead
                     th ID
                     th Name
-                    th Salary
+                    th Contact No.
+                    th Email
                     th Role
                     th City
+                    th Action
                   tbody
                     tr
                       td 1
-                      td Dakota Rice
-                      td $36,738
-                      td Niger
-                      td Oud-Turnhout
+                      td Employee 1
+                      td Contact 1
+                      td Email 1
+                      td Role 1
+                      td City 1
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                     tr
                       td 2
-                      td Minerva Hooper
-                      td $23,789
-                      td Cura&ccedil;ao
-                      td Sinaai-Waas
+                      td Employee 2
+                      td Contact 2
+                      td Email 2
+                      td Role 2
+                      td City 2
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                     tr
                       td 3
-                      td Sage Rodriguez
-                      td $56,142
-                      td Netherlands
-                      td Baileux
+                      td Employee 3
+                      td Contact 3
+                      td Email 3
+                      td Role 3
+                      td City 3
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                     tr
                       td 4
-                      td Philip Chaney
-                      td $38,735
-                      td Korea, South
-                      td Overland Park
+                      td Employee 4
+                      td Contact 4
+                      td Email 4
+                      td Role 4
+                      td City 4
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                     tr
                       td 5
-                      td Doris Greene
-                      td $63,542
-                      td Malawi
-                      td Feldkirchen in K&auml;rnten
+                      td Employee 5
+                      td Contact 5
+                      td Email 5
+                      td Role 5
+                      td City 5
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                     tr
-                      td 6
-                      td Mason Porter
-                      td $78,615
-                      td Chile
-                      td Gloucester
-                    tr
-                      td 6
-                      td Mason Porter
-                      td $78,615
-                      td Chile
-                      td Gloucester
-                    tr
-                      td 6
-                      td Mason Porter
-                      td $78,615
-                      td Chile
-                      td Gloucester
-                    tr
-                      td 6
-                      td Mason Porter
-                      td $78,615
-                      td Chile
-                      td Gloucester
-                    tr
-                      td 6
-                      td Mason Porter
-                      td $78,615
-                      td Chile
-                      td Gloucester
-
+                      td 1
+                      td Employee 6
+                      td Contact 6
+                      td Email 6
+                      td Role 6
+                      td City 6
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
+                   
+    script.
+     $().ready(function(){
+      $("li").each(function(k,v){      
+      if($(this).text() === "Staff"){
+      $(this).attr("class", "active");
+      }
+      });
+      });
+      $('.editbtn').click(function () {
+      
+      var currentTD = $(this).parents('tr').find('td');
+      if ($(this).html() == 'Edit') {
+      currentTD = $(this).parents('tr').find('td');
+      
+      $.each(currentTD, function () {
+      
+      $(this).prop('contenteditable', true);      
+      
+      
+      });
+      } else {
+      $.each(currentTD, function () {
+      $(this).prop('contenteditable', false)
+      });
+      }
+      $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
+      });

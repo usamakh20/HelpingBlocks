@@ -95,4 +95,14 @@ router.get('/donations',user_middleware.auth,function(req,res){
     res.render('donations');
 });
 
+router.get('/registration',user_middleware.auth,function(req,res){
+    res.render('registration');
+      
+});
+
+router.get('/shopkeeper',user_middleware.auth,function(req,res){
+    res.render('shopkeeper');
+      
+});
+
 module.exports = router;
