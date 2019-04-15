@@ -3,11 +3,9 @@ const bcrypt = require('bcrypt'),
     SALT_WORK_FACTOR=10;
 
 const userSchema = new mongoose.Schema({
-    username: {type: String, required:true, unique: true},
+    CNIC: {type: String, required:true, unique: true,minlength:13,maxlength:13},
     password: {type: String, required:true},
-    firstName: String,
-    lastName: String,
-    donations:[String]
+    name: String,
 });
 
 userSchema.pre('save',function(next){
@@ -38,6 +36,5 @@ userSchema.methods.comparePassword = function(candidatePassword, callback) {
     });
 };
 
-const user = mongoose.model('user', userSchema);
 
-module.exports = user;
+module.exports = mongoose.model('donor.js', userSchema);

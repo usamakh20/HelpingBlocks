@@ -1,7 +1,6 @@
 const express = require('express');
-var path = require('path');
 const router = express.Router();
-const user = require('../model/user');
+const user = require('../model/donor');
 const user_middleware = require('../middleware/user');
 
 /* GET home page. */
@@ -25,7 +24,7 @@ router.post('/register',function (req,res) {
     });
 });
 
-router.post('/login',user_middleware.login,function (req,res,next) {
+router.post('/login',user_middleware.login,function (req,res) {
     if (req.middleware.error) {
         console.log(req.middleware.error);
         return res.redirect('/');
@@ -48,7 +47,7 @@ router.get('/logout',function(req,res){
     return res.redirect('/');
 });
 
-router.post('/donation',function (req,res,next) {
+router.post('/donation',function (req,res) {
     if(req.session.userData)
         user.updateOne({username:req.session.userData.username},{$push: { donations: req.body.id}},function (err,user) {
             if (err)
@@ -86,17 +85,14 @@ router.get('/staff',user_middleware.auth,function(req,res){
 
 router.get('/maps',user_middleware.auth,function(req,res){
     res.render('maps');
-
 });
 
 router.get('/finances',user_middleware.auth,function(req,res){
     res.render('finances');
-
 });
 
 router.get('/donations',user_middleware.auth,function(req,res){
     res.render('donations');
-
 });
 
 module.exports = router;

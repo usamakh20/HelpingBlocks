@@ -10,7 +10,7 @@ exports.api_auth = (req,res,next) => {
         next()
     } catch (error) {
         return res.status(401).json({
-            message: 'Auth failed'
+            message: 'auth failed'
         });
     }
 };
@@ -21,10 +21,10 @@ exports.auth = (req,res,next) => {
 };
 
 exports.register = (req,res,next) => {
-    superAgent.post(baseUrl+'auth/userpass/users/'+req.body.username)
+    superAgent.post(baseUrl+'auth/userpass/users/'+req.body.CNIC)
         .set(Header)
         .send({
-            username: req.body.username,
+            username: req.body.CNIC,
             password: req.body.password,
             policy: "username"
         })
@@ -40,7 +40,7 @@ exports.register = (req,res,next) => {
 
 
 exports.login = (req,res,next) => {
-    superAgent.post(baseUrl+'auth/userpass/login/'+req.body.username)
+    superAgent.post(baseUrl+'auth/userpass/login/'+req.body.CNIC)
         .set(Header)
         .send({
             password:req.body.password
