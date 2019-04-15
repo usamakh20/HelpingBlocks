@@ -99,12 +99,12 @@ router.get('/donations',user_middleware.auth,function(req,res){
 
 });
 
-router.get('/registration',function(req,res){
+router.get('/registration',user_middleware.auth,function(req,res){
     res.render('registration');
       
 });
 
-router.get('/shopkeeper',function(req,res){
+router.get('/shopkeeper',user_middleware.auth,function(req,res){
     res.render('shopkeeper');
       
 });
