@@ -213,12 +213,15 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        	<td>1</td>
-                                        	<td>Suchal Rice</td>
-                                            <td>3 Mar</td>
-                                            <td>Rs. 9000</td>
-                                        	<td>cxyTT6p9o</td>
-                                        	<td><button class="btn btn-info btn-fill">Edit</button><button class="btn btn-danger btn-fill">Remove</button></td>
+                                        	<td contenteditable="false">1</td>
+                                        	<td contenteditable="false">Suchal Rice</td>
+                                            <td contenteditable="false">3 Mar</td>
+                                            <td contenteditable="false">Rs. 9000</td>
+                                        	<td contenteditable="false">cxyTT6p9o</td>
+                                        	<td>
+                                                <button class="editbtn btn-info btn-fill">Edit</button>
+                                                <button class="rmvbtn btn-danger btn-fill">Remove</button>
+                                            </td>
                                         </tr>
                                         <tr>
                                         	<td>2</td>
@@ -362,5 +365,29 @@
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="javascripts/demo.js"></script>
 
+    <script>
+        $(document).ready(function () {
+          $('.editbtn').click(function () {
+              var currentTD = $(this).parents('tr').find('td');
+              if ($(this).html() == 'Edit') {
+                  currentTD = $(this).parents('tr').find('td');
+                  var i=0;
+                  $.each(currentTD, function () {
+                      $(this).prop('contenteditable', true);
+                      i=i+1;
+                      if(i === 3) break;
+                  });
+              } else {
+                 $.each(currentTD, function () {
+                      $(this).prop('contenteditable', false)
+                  });
+              }
+    
+              $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
+    
+          });
+    
+      });
+    </script>
 
 </html>

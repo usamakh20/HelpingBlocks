@@ -38,7 +38,7 @@ head
         a.simple-text(href='')
           | HelpingBlock
       ul.nav
-        li.active
+        li
           a(href='dashboard')
             i.pe-7s-graph
             p Dashboard
@@ -55,8 +55,16 @@ head
             i.pe-7s-note2
             p Staff
         li
+          a(href='shopkeeper')
+            i.pe-7s-home
+            p Shopkeeper
+        li
           a(href='maps')
             i.pe-7s-map-marker
             p Maps
+        li
+          a(href='registration')
+            i.pe-7s-add-user
+            p Registration
   .main-panel
     block content

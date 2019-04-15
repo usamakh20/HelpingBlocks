@@ -52,5 +52,11 @@ block content
     script(src='javascripts/demo.js')
     script.
      $().ready(function(){
-     demo.initGoogleMaps();
-     });
+      $(document).ready(function(){
+      $("li").each(function(k,v){      
+      if($(this).text() === "Maps"){
+      $(this).attr("class", "active");
+      }
+      });
+      });
+      });

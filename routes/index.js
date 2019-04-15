@@ -86,8 +86,7 @@ router.get('/donation',function(req,res){
 
 
 router.get('/dashboard',function(req,res){
-
-    //res.sendFile(path.join(__dirname, '../views/dashboard.html'));
+    
     res.render('dashboard');
 })
 
@@ -110,6 +109,16 @@ router.get('/finances',function(req,res){
 
 router.get('/donations',function(req,res){
     res.render('donations');
+      
+});
+
+router.get('/registration',function(req,res){
+    res.render('registration');
+      
+});
+
+router.get('/shopkeeper',function(req,res){
+    res.render('shopkeeper');
       
 });
 

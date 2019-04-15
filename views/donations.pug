@@ -47,149 +47,282 @@ block content
               a(href='#')
                 p Log out
             li.separator.hidden-lg.hidden-md
+    br
+    //- .col-md-8
+    //-   .card
+    //-     .header
+    //-       h4.title My Sample Form
+    //-     .content
+    //-       form
+    //-         .row
+    //-           .col-md-6
+    //-             .form-group
+    //-               label Name
+    //-               input.form-control(type='text' placeholder='Full Name' value='')
+    //-           .col-md-6
+    //-             .form-group
+    //-               label Schedule
+    //-               select.form-control
+    //-                 option(value='Weekly') Weekly
+    //-                 option(value='Monthly') Monthly
+    //-                 option(value='Every 2 Months') Every 2 Months
+    //-                 option(value='Every 3 Months') Every 3 Months
+    //-         .row
+    //-           .col-md-12
+    //-             .form-group
+    //-               label Address
+    //-               input.form-control(type='text' placeholder='Home Address' value='Machar Colony, Dhok Hassu')
+    //-         .row
+    //-           .col-md-4
+    //-             .form-group
+    //-               label City
+    //-               input.form-control(type='text' placeholder='City' value='')
+    //-           .col-md-4
+    //-             .form-group
+    //-               label Amount Recieveable
+    //-               input.form-control(type='number' placeholder='Rs. 1000')
+    //-         button.btn.btn-info.btn-fill.pull-right(type='submit') Add
+    //-         .clearfix
     .col-md-8
       .card
         .header
-          h4.title Create Donaion Schedule
+          h4.title Add a Recipient to Donation List          
         .content
           form
             .row
               .col-md-6
                 .form-group
-                  label Name
-                  input.form-control(type='text' placeholder='Full Name' value='')
+                  label Recipient Name
+                  select.form-control
+                    option(value='Name 1') Name 1
+                    option(value='Name 2') Name 2
+                    option(value='Name 3') Name 3
+                    option(value='Name 4') Name 4
               .col-md-6
                 .form-group
-                  label Schedule
+                  label Donation List
                   select.form-control
-                    option(value='Weekly') Weekly
-                    option(value='Monthly') Monthly
-                    option(value='Every 2 Months') Every 2 Months
-                    option(value='Every 3 Months') Every 3 Months
+                    option(value='List 1') List 1
+                    option(value='List 2') List 2
+                    option(value='List 3') List 3
+                    option(value='List 4') List 4
             .row
-              .col-md-12
-                .form-group
-                  label Address
-                  input.form-control(type='text' placeholder='Home Address' value='Machar Colony, Dhok Hassu')
-            .row
-              .col-md-4
-                .form-group
-                  label City
-                  input.form-control(type='text' placeholder='City' value='')
               .col-md-4
                 .form-group
                   label Amount Recieveable
-                  input.form-control(type='number' placeholder='Rs. 1000')
-            button.btn.btn-info.btn-fill.pull-right(type='submit') Add
+                  input.form-control(type="number" min="0" placeholder='Rs. 1000')
+            button.btn.btn-info.btn-fill.pull-right(type='submit') Add New Recipient
             .clearfix
+    .col-md-8
+      .card
+        .header
+          h4.title Create New Donation List          
+        .content
+          form
+            .row
+              .col-md-6
+                .form-group
+                  label List Title
+                  input.form-control(type='text' placeholder='Title' value='')
+              .col-md-6
+                .form-group
+                  label List Unique Identifier
+                  select.form-control
+                    option(value='List 1') List 1
+                    option(value='List 2') List 2
+                    option(value='List 3') List 3
+                    option(value='List 4') List 4
+            button.btn.btn-info.btn-fill.pull-right(type='submit') Create List
+            .clearfix
+    .content
+        .row
+          .col-md-12
+            .card
+              .header
+                h4.title Donations List 1
+                div
+                  p.category List of Recipients
+                  button.refbtn.btn-info.btn-fill.pull-left Refresh
+                  <span>  </span>
+                  button.paybtn.btn-info.btn-fill.pull-right Pay All
+              .content.table-responsive.table-full-width
+                table.table.table-hover.table-striped
+                  thead
+                    th ID
+                    th Name
+                    th Phone
+                    th CNIC
+                    th Address
+                    th Action
+                  tbody
+                    tr
+                      td 1
+                      td(contenteditable='false') Name 1
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 1
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
+                    tr
+                      td 2
+                      td(contenteditable='false') Name 2
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 2
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
+                    tr
+                      td 3
+                      td(contenteditable='false') Name 3
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 3
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
+                    tr
+                      td 4
+                      td(contenteditable='false') Name 4
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 4
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
     .content
       .container-fluid
         .row
           .col-md-12
             .card
               .header
-                h4.title Recipients List
+                h4.title Donations List 2
                 p.category List of Recipients
+                button.refbtn.btn-info.btn-fill.pull-left Refresh 
+                <span>  </span>
+                  button.paybtn.btn-info.btn-fill.pull-right Pay All
               .content.table-responsive.table-full-width
                 table.table.table-hover.table-striped
                   thead
                     th ID
                     th Name
-                    th Schedule
-                    th Recieveable
-                    th City
+                    th Phone
+                    th CNIC
+                    th Address
                     th Action
                   tbody
                     tr
                       td 1
-                      td Suchal Rice
-                      td Monthly
-                      td Rs. 9000
-                      td Lahore
+                      td(contenteditable='false') Name 1
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 1
                       td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove 
                     tr
                       td 2
-                      td Awais Hooper
-                      td Weekly
-                      td Rs. 2000
-                      td Gujrat
+                      td(contenteditable='false') Name 2
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 2
                       td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                     tr
                       td 3
-                      td Usama Rodriguez
-                      td Monthly
-                      td Rs. 11000
-                      td Karachi
+                      td(contenteditable='false') Name 3
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 3
                       td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                     tr
                       td 4
-                      td Philip Malik
-                      td Every 3 Months
-                      td Rs. 35000
-                      td Islamabad
+                      td(contenteditable='false') Name 4
+                      td(contenteditable='false') 03000000000
+                      td 0000-0000000-0
+                      td Address 4
                       td
-                    tr
-                      td 5
-                      td Maaz Greene
-                      td Daily
-                      td Rs. 300
-                      td Khanapul
-                      td
-                    tr
-                      td 6
-                      td Saad Porter
-                      td Hourly
-                      td Rs. 50
-                      td WahCantt
-                      td
-          .col-md-12
-            .card.card-plain
-              .header
-                h4.title Donors List
-                p.category List of Donors
-              .content.table-responsive.table-full-width
-                table.table.table-hover
-                  thead
-                    th ID
-                    th Name
-                    th Schedule
-                    th Amount
-                    th Action
-                  tbody
-                    tr
-                      td 1
-                      td Suchal Rice
-                      td Monthly
-                      td Rs. 3000
-                      td
-                    tr
-                      td 2
-                      td Awais Hooper
-                      td Weekly
-                      td Rs. 1500
-                      td
-                    tr
-                      td 3
-                      td Usama Rodriguez
-                      td Monthly
-                      td Rs. 5000
-                      td
-                    tr
-                      td 4
-                      td Philip Malik
-                      td Every 3 Months
-                      td Rs. 2000
-                      td
-                    tr
-                      td 5
-                      td Maaz Greene
-                      td Daily
-                      td Rs. 3000
-                      td
-                    tr
-                      td 6
-                      td Saad Porter
-                      td Hourly
-                      td Rs. 4000
-                      td
-
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
+                    
+          //- .col-md-12
+          //-   .card.card-plain
+          //-     .header
+          //-       h4.title Donors List
+          //-       p.category List of Donors
+          //-     .content.table-responsive.table-full-width
+          //-       table.table.table-hover
+          //-         thead
+          //-           th ID
+          //-           th Name
+          //-           th Amount
+          //-           th Action
+          //-         tbody
+          //-           tr
+          //-             td(contenteditable='false') 1
+          //-             td(contenteditable='false') Suchal Rice
+          //-             td(contenteditable='false') Rs. 9000
+          //-             td
+          //-               button.editbtn.btn-info.btn-fill Edit
+          //-               button.rmvbtn.btn-danger.btn-fill Remove
+          //-           tr
+          //-             td(contenteditable='false') 1
+          //-             td(contenteditable='false') Suchal Rice
+          //-             td(contenteditable='false') Rs. 9000
+          //-             td
+          //-               button.editbtn.btn-info.btn-fill Edit
+          //-               button.rmvbtn.btn-danger.btn-fill Remove
+          //-           tr
+          //-             td(contenteditable='false') 1
+          //-             td(contenteditable='false') Suchal Rice
+          //-             td(contenteditable='false') Rs. 9000
+          //-             td
+          //-               button.editbtn.btn-info.btn-fill Edit
+          //-               button.rmvbtn.btn-danger.btn-fill Remove
+          //-           tr
+          //-             td(contenteditable='false') 1
+          //-             td(contenteditable='false') Suchal Rice
+          //-             td(contenteditable='false') Rs. 9000
+          //-             td
+          //-               button.editbtn.btn-info.btn-fill Edit
+          //-               button.rmvbtn.btn-danger.btn-fill Remove
+    script.
+     $().ready(function(){
+      $("li").each(function(k,v){      
+      if($(this).text() === "Donations"){
+      $(this).attr("class", "active");
+      }
+      });
+      });
+      $('.editbtn').click(function () {
+      
+      var currentTD = $(this).parents('tr').find('td');
+      if ($(this).html() == 'Edit') {
+      currentTD = $(this).parents('tr').find('td');
+      var i = 0;
+      $.each(currentTD, function (i) {
+      if(i < 3){
+      $(this).prop('contenteditable', true);      
+      i = i+1;
+      }
+      });
+      } else {
+      $.each(currentTD, function () {
+      $(this).prop('contenteditable', false)
+      });
+      }
+      $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
+      });
+      

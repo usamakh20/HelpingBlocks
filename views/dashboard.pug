@@ -275,3 +275,13 @@ head
                   .stats
                     i.fa.fa-history
                     |  Updated 3 minutes ago
+    script.
+     $().ready(function(){
+      $(document).ready(function(){
+      $("li").each(function(k,v){      
+      if($(this).text() === "Dashboard"){
+      $(this).attr("class", "active");
+      }
+      });
+      });
+      });

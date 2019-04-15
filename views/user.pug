@@ -129,3 +129,11 @@ block content
                   i.fa.fa-twitter
                 button.btn.btn-simple(href='#')
                   i.fa.fa-google-plus-square
+    script.
+     $().ready(function(){
+      $("li").each(function(k,v){      
+      if($(this).text() === "Users"){
+      $(this).attr("class", "active");
+      }
+      });      
+      });
