@@ -2,7 +2,7 @@ const express = require('express');
 var path = require('path');
 const router = express.Router();
 const user = require('../model/user');
-const userController = require('../controller/user');
+const user_middleware = require('../middleware/user');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -10,22 +10,22 @@ router.get('/', function(req, res) {
     else res.render('adminLogin');
 });
 
-// router.post('/register',function (req,res) {
-//     new user({
-//         username: req.body.username,
-//         password: req.body.password,
-//         firstName: req.body.firstName,
-//         lastName: req.body.lastName
-//     }).save(function(err, savedUser) {
-//         if (err) {
-//             console.log(err);
-//             return res.status(500).send({message: 'Server Error'});
-//         }
-//         return res.status(200).send({message: 'User is registered'});
-//     });
-// });
+router.post('/register',function (req,res) {
+    new user({
+        username: req.body.username,
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
+    }).save(function(err, savedUser) {
+        if (err) {
+            console.log(err);
+            return res.status(500).send({message: 'Server Error'});
+        }
+        return res.status(200).send({message: 'User is registered'});
+    });
+});
 
-router.post('/login',userController.login,function (req,res,next) {
+router.post('/login',user_middleware.login,function (req,res,next) {
     if (req.middleware.error) {
         console.log(req.middleware.error);
         return res.redirect('/');
@@ -45,7 +45,7 @@ router.get('/test',function(req,res){
 
 router.get('/logout',function(req,res){
     req.session.destroy();
-    return res.status(200).send({message:'You have been logged out!!'});
+    return res.redirect('/');
 });
 
 router.post('/donation',function (req,res,next) {
@@ -74,27 +74,27 @@ router.get('/donation',function(req,res){
 });
 
 
-router.get('/dashboard',function(req,res){
+router.get('/dashboard',user_middleware.auth,function(req,res){
     res.render('dashboard');
 });
 
 
-router.get('/staff',function(req,res){
+router.get('/staff',user_middleware.auth,function(req,res){
     res.render('staff');
 });
 
 
-router.get('/maps',function(req,res){
+router.get('/maps',user_middleware.auth,function(req,res){
     res.render('maps');
 
 });
 
-router.get('/finances',function(req,res){
+router.get('/finances',user_middleware.auth,function(req,res){
     res.render('finances');
 
 });
 
-router.get('/donations',function(req,res){
+router.get('/donations',user_middleware.auth,function(req,res){
     res.render('donations');
 
 });
