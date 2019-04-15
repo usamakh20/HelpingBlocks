@@ -2,13 +2,11 @@ const express = require('express');
 var path = require('path');
 const router = express.Router();
 const user = require('../model/user');
+const user_middleware = require('../middleware/user');
 
 /* GET home page. */
-// router.get('/', function(req, res) {
-//     res.render('index',{title:'Helping Blocks'});
-// });
 router.get('/', function(req, res) {
-    if(req.session.user)  res.redirect('/dashboard');
+    if(req.session.userData)  res.redirect('/dashboard');
     else res.render('adminLogin');
 });
 
@@ -27,41 +25,32 @@ router.post('/register',function (req,res) {
     });
 });
 
-router.post('/login',function (req,res,next) {
-    user.findOne({username:req.body.username},function(err,user) {
-        if (err)
-            return res.status(500).send({message: 'Server Error'});
+router.post('/login',user_middleware.login,function (req,res,next) {
+    if (req.middleware.error) {
+        console.log(req.middleware.error);
+        return res.redirect('/');
+    }
 
-        else if(!user)
-            return res.redirect('/');
-
-        else
-        // test a password with stored hash
-            user.comparePassword(req.body.password, function(err, isMatch) {
-                if (isMatch) {
-                    req.session.user = user;
-                    res.redirect('/dashboard');  
-                }
-
-                else res.redirect('/'); 
-            });
-    })
+    else {
+        req.session.userData = req.middleware;
+        return res.redirect('/dashboard');
+    }
 });
 
 router.get('/test',function(req,res){
-    if(!req.session.user)
+    if(!req.session.userData)
         return res.status(401).send({message:'Login first'});
     else return res.status(200).send({message:'Welcome to Dashboard'});
 });
 
 router.get('/logout',function(req,res){
     req.session.destroy();
-    return res.status(200).send({message:'You have been logged out!!'});
+    return res.redirect('/');
 });
 
 router.post('/donation',function (req,res,next) {
-    if(req.session.user)
-        user.updateOne({username:req.session.user.username},{$push: { donations: req.body.id}},function (err,user) {
+    if(req.session.userData)
+        user.updateOne({username:req.session.userData.username},{$push: { donations: req.body.id}},function (err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -72,8 +61,8 @@ router.post('/donation',function (req,res,next) {
 });
 
 router.get('/donation',function(req,res){
-    if(req.session.user)
-        user.findOne({username:req.session.user.username},function(err,user) {
+    if(req.session.userData)
+        user.findOne({username:req.session.userData.username},function(err,user) {
             if (err)
                 return res.status(500).send({message: 'Server Error'});
 
@@ -85,31 +74,29 @@ router.get('/donation',function(req,res){
 });
 
 
-router.get('/dashboard',function(req,res){
-    
+router.get('/dashboard',user_middleware.auth,function(req,res){
     res.render('dashboard');
-})
+});
 
 
-router.get('/staff',function(req,res){
-
+router.get('/staff',user_middleware.auth,function(req,res){
     res.render('staff');
-})
+});
 
 
-router.get('/maps',function(req,res){
+router.get('/maps',user_middleware.auth,function(req,res){
     res.render('maps');
-    
+
 });
 
-router.get('/finances',function(req,res){
+router.get('/finances',user_middleware.auth,function(req,res){
     res.render('finances');
-    
+
 });
 
-router.get('/donations',function(req,res){
+router.get('/donations',user_middleware.auth,function(req,res){
     res.render('donations');
-      
+
 });
 
 router.get('/registration',function(req,res){
