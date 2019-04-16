@@ -9,6 +9,13 @@ router.get('/', function(req, res) {
     res.render('index',{title:'Helping Blocks'});
 });
 
+router.get('/track', function(req,res){
+    var contracts = require('../Contracts');
+    contracts.DonationToken.methods.donations(0).call().then(function(r){
+        res.status(200).json(JSON.stringify(r));
+    })
+})
+
 router.post('/register',function (req,res) {
     new user({
         CNIC: req.body.CNIC,

@@ -7,7 +7,9 @@
 var app = require('../app');
 var debug = require('debug')('helpingblocks:server');
 var http = require('http');
-
+// TLS_CERT_FILE
+// TLS_KEY_FILE
+// DH_FILE
 /**
  * Get port from environment and store in Express.
  */
