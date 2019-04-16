@@ -1,6 +1,117 @@
 extends layout2
 
 block content 
+<<<<<<< HEAD
+    nav.navbar.navbar-default.navbar-fixed
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Manage Shopkeeper
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-left
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                i.fa.fa-globe
+                b.caret.hidden-sm.hidden-xs
+                span.notification.hidden-sm.hidden-xs 5
+                p.hidden-lg.hidden-md
+                  | 2 Notifications
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Notification 1
+                li
+                  a(href='#') Notification 2
+            
+          ul.nav.navbar-nav.navbar-right
+            
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                p
+                  | Options
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Action
+                li
+                  a(href='#') Action 2
+                li
+                  a(href='#') Action 3
+                li
+                  a(href='#') Action 4
+                li
+                  a(href='#') Something
+                li.divider
+                li
+                  a(href='#') Separated link
+            li
+              a(href='#')
+                p Log out
+            li.separator.hidden-lg.hidden-md            
+    .col-md-8
+      .card
+        .header
+          h4.title Pay Shopkeeper
+        .content
+          form(action='/shopkeeper' method='post')
+            .row
+              .col-md-6
+                .form-group
+                  label Name
+                  input.form-control(type='text' placeholder='Full Name' value='' name='name')
+              .col-md-6
+                .form-group
+                  label Amount
+                  input.form-control(type='text' placeholder='Amount' value='' name='amount')              
+            button.btn.btn-info.btn-fill.pull-right(type='submit') Pay Shopkeeper
+            .clearfix
+                             
+    .content
+      .container-fluid
+        .row
+          .col-md-12
+            .card
+              .header
+                h4.title ShopKeeper Payable Status List
+                p.category List of Shopkeepers token to currency withdrawals
+                button.refbtn.btn-info.btn-fill.pull-left Refresh
+              .content.table-responsive.table-full-width
+                table.table.table-hover.table-striped
+                  thead
+                    th ID
+                    th Name
+                    th Amount
+                    th Status
+                  tbody
+                    tr
+                      td 1
+                      td Shopkeeper 1
+                      td Token 1
+                      td
+                        p.text-info Not Paid
+                    tr
+                      td 2
+                      td Shopkeeper 2
+                      td Token 2
+                      td
+                        p.text-info Not Paid
+                    tr
+                      td 3
+                      td Shopkeeper 3
+                      td Token 3
+                      td
+                        p.text-warning Pending
+                    tr
+                      td 4
+                      td Shopkeeper 4
+                      td Token 4
+                      td
+                        p.text-info Not Paid
+=======
   nav.navbar.navbar-default.navbar-fixed
     .container-fluid
       .navbar-header
@@ -72,6 +183,7 @@ block content
   .content
     .container-fluid
       .row
+>>>>>>> 472610b026bc32bf6c77ba08ee7cf0e1a1af91bb
         .col-md-12
           .card
             .header
