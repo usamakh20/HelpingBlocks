@@ -1,33 +1,24 @@
 const express = require('express');
-var path = require('path');
 const router = express.Router();
-const user = require('../model/user');
+const user = require('../model/donor');
 const user_middleware = require('../middleware/user');
 
-/* GET home page. */
-router.get('/', function(req, res) {
-    if(req.session.userData)  res.redirect('/dashboard');
-    else res.render('adminLogin');
-});
+// router.post('/register',function (req,res) {
+//     new user({
+//         username: req.body.username,
+//         password: req.body.password,
+//         firstName: req.body.firstName,
+//         lastName: req.body.lastName
+//     }).save(function(err, savedUser) {
+//         if (err) {
+//             console.log(err);
+//             return res.status(500).send({message: 'Server Error'});
+//         }
+//         return res.status(200).send({message: 'User is registered'});
+//     });
+// });
 
-router.post('/register',function (req,res) {
-    new user({
-        username: req.body.username,
-        password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName
-    }).save(function(err, savedUser) {
-        if (err) {
-            console.log(err);
-            return res.status(500).send({message: 'Server Error'});
-        }
-        return res.status(200).send({message: 'User is registered'});
-    });
-});
-
-
-
-router.post('/login',user_middleware.login,function (req,res,next) {
+router.post('/login',user_middleware.login,function (req,res) {
     if (req.middleware.error) {
         console.log(req.middleware.error);
         return res.redirect('/');
@@ -51,31 +42,36 @@ router.get('/logout',function(req,res){
     return res.redirect('/');
 });
 
-router.post('/donation',function (req,res,next) {
-    if(req.session.userData)
-        user.updateOne({username:req.session.userData.username},{$push: { donations: req.body.id}},function (err,user) {
-            if (err)
-                return res.status(500).send({message: 'Server Error'});
+// router.post('/donation',function (req,res) {
+//     if(req.session.userData)
+//         user.updateOne({username:req.session.userData.username},{$push: { donations: req.body.id}},function (err,user) {
+//             if (err)
+//                 return res.status(500).send({message: 'Server Error'});
+//
+//             else return res.status(200).send({message: 'Donation id is saved'});
+//
+//         });
+//     else return res.status(401).send({message:'Login first'});
+// });
+//
+// router.get('/donation',function(req,res){
+//     if(req.session.userData)
+//         user.findOne({username:req.session.userData.username},function(err,user) {
+//             if (err)
+//                 return res.status(500).send({message: 'Server Error'});
+//
+//             else return res.status(200).send({donation_ids: user.donations});
+//
+//         });
+//
+//     else return res.status(401).send({message:'Login first'});
+// });
 
-            else return res.status(200).send({message: 'Donation id is saved'});
-
-        });
-    else return res.status(401).send({message:'Login first'});
+/* GET home page. */
+router.get('/', function(req, res) {
+    if(req.session.userData)  res.redirect('/dashboard');
+    else res.render('adminLogin');
 });
-
-router.get('/donation',function(req,res){
-    if(req.session.userData)
-        user.findOne({username:req.session.userData.username},function(err,user) {
-            if (err)
-                return res.status(500).send({message: 'Server Error'});
-
-            else return res.status(200).send({donation_ids: user.donations});
-
-        });
-
-    else return res.status(401).send({message:'Login first'});
-});
-
 
 router.get('/dashboard',user_middleware.auth,function(req,res){
     res.render('dashboard');

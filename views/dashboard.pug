@@ -1,6 +1,7 @@
 extends layout2
 
 block content
+<<<<<<< HEAD
     nav.navbar.navbar-default.navbar-fixed
       .container-fluid
         .navbar-header
@@ -200,3 +201,229 @@ block content
       $.notify({ icon: 'pe-7s-paint-bucket', message: "Recieved new <b>Donation</b>." },{ type: 'success', timer: 100 });
       $.notify({ icon: 'pe-7s-look', message: "Daily donation average <b>Dropped</b>." },{ type: 'warning', timer: 100 });
       });          
+=======
+  nav.navbar.navbar-default.navbar-fixed
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#') Dashboard
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-left
+          li.dropdown
+            a.dropdown-toggle(href='#' data-toggle='dropdown')
+              i.fa.fa-globe
+              b.caret.hidden-sm.hidden-xs
+              span.notification.hidden-sm.hidden-xs 5
+              p.hidden-lg.hidden-md
+                | 2 Notifications
+                b.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Notification 1
+              li
+                a(href='#') Notification 2
+        ul.nav.navbar-nav.navbar-right
+          li.dropdown
+            a.dropdown-toggle(href='#' data-toggle='dropdown')
+              p
+                | Options
+                b.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Option
+              li
+                a(href='#') Option 2
+              li
+                a(href='#') Option 3
+              li
+                a(href='#') Option 3
+              li.divider
+              li
+                a(href='#') Separated Option
+          li
+            a(href='#')
+              p Log out
+          li.separator.hidden-lg.hidden-md
+  .content
+    .container-fluid
+      .row
+        .col-md-4
+          .card
+            .header
+              h4.title Recipients Statistics
+              p.category Last Campaign Performance
+            .content
+              #chartPreferences.ct-chart.ct-perfect-fourth
+              .footer
+                .legend
+                  i.fa.fa-circle.text-info
+                  |  Open
+                  i.fa.fa-circle.text-danger
+                  |  Bounce
+                  i.fa.fa-circle.text-warning
+                  |  Unsubscribe
+                hr
+                .stats
+                  i.fa.fa-clock-o
+                  |  Campaign sent 2 days ago
+        .col-md-8
+          .card
+            .header
+              h4.title Donation Statistics
+              p.category 72 Hours Record
+            .content
+              #chartHours.ct-chart
+              .footer
+                .legend
+                  i.fa.fa-circle.text-info
+                  |  Open
+                  i.fa.fa-circle.text-danger
+                  |  Click
+                  i.fa.fa-circle.text-warning
+                  |  Click Second Time
+                hr
+                .stats
+                  i.fa.fa-history
+                  |  Updated 3 minutes ago
+      .row
+        .col-md-6
+          .card
+            .header
+              h4.title Previous Year Stats
+              p.category All amount including Taxes
+            .content
+              #chartActivity.ct-chart
+              .footer
+                .legend
+                  i.fa.fa-circle.text-info
+                  |  Satisfaction
+                  i.fa.fa-circle.text-danger
+                  |  Spent
+                hr
+                .stats
+                  i.fa.fa-check
+                  |  Data information certified
+        .col-md-6
+          .card
+            .header
+              h4.title Tasks
+              p.category Backend development
+            .content
+              .table-full-width
+                table.table
+                  tbody
+                    tr
+                      td
+                        .checkbox
+                          input#checkbox1(type='checkbox')
+                          label(for='checkbox1')
+                      td Sign contract for &quot;What are conference organizers afraid of?&quot;
+                      td.td-actions.text-right
+                        button.btn.btn-info.btn-simple.btn-xs(type='button' rel='tooltip' title='Edit Task')
+                          i.fa.fa-edit
+                        button.btn.btn-danger.btn-simple.btn-xs(type='button' rel='tooltip' title='Remove')
+                          i.fa.fa-times
+                    tr
+                      td
+                        .checkbox
+                          input#checkbox2(type='checkbox' checked='')
+                          label(for='checkbox2')
+                      td Lines From Great Russian Literature? Or E-mails From My Boss?
+                      td.td-actions.text-right
+                        button.btn.btn-info.btn-simple.btn-xs(type='button' rel='tooltip' title='Edit Task')
+                          i.fa.fa-edit
+                        button.btn.btn-danger.btn-simple.btn-xs(type='button' rel='tooltip' title='Remove')
+                          i.fa.fa-times
+                    tr
+                      td
+                        .checkbox
+                          input#checkbox3(type='checkbox')
+                          label(for='checkbox3')
+                      td
+                        | Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                      td.td-actions.text-right
+                        button.btn.btn-info.btn-simple.btn-xs(type='button' rel='tooltip' title='Edit Task')
+                          i.fa.fa-edit
+                        button.btn.btn-danger.btn-simple.btn-xs(type='button' rel='tooltip' title='Remove')
+                          i.fa.fa-times
+                    tr
+                      td
+                        .checkbox
+                          input#checkbox4(type='checkbox' checked='')
+                          label(for='checkbox4')
+                      td Create 4 Invisible User Experiences you Never Knew About
+                      td.td-actions.text-right
+                        button.btn.btn-info.btn-simple.btn-xs(type='button' rel='tooltip' title='Edit Task')
+                          i.fa.fa-edit
+                        button.btn.btn-danger.btn-simple.btn-xs(type='button' rel='tooltip' title='Remove')
+                          i.fa.fa-times
+                    tr
+                      td
+                        .checkbox
+                          input#checkbox5(type='checkbox')
+                          label(for='checkbox5')
+                      td Read &quot;Following makes Medium better&quot;
+                      td.td-actions.text-right
+                        button.btn.btn-info.btn-simple.btn-xs(type='button' rel='tooltip' title='Edit Task')
+                          i.fa.fa-edit
+                        button.btn.btn-danger.btn-simple.btn-xs(type='button' rel='tooltip' title='Remove')
+                          i.fa.fa-times
+                    tr
+                      td
+                        .checkbox
+                          input#checkbox6(type='checkbox' checked='')
+                          label(for='checkbox6')
+                      td Unfollow 5 enemies from twitter
+                      td.td-actions.text-right
+                        button.btn.btn-info.btn-simple.btn-xs(type='button' rel='tooltip' title='Edit Task')
+                          i.fa.fa-edit
+                        button.btn.btn-danger.btn-simple.btn-xs(type='button' rel='tooltip' title='Remove')
+                          i.fa.fa-times
+              .footer
+                hr
+                .stats
+                  i.fa.fa-history
+                  |  Updated 3 minutes ago
+  script.
+    $().ready(function(){
+      $("li").each(function(k,v){
+        if($(this).text() === "Dashboard"){
+          $(this).attr("class", "active");
+        }
+      });
+
+      $.notify({
+        icon: 'pe-7s-gift',
+        message: "Welcome to <b>HelpingBlock</b>."
+      },{
+        type: 'info',
+        timer: 100
+      });
+      $.notify({
+        icon: 'pe-7s-paint-bucket',
+        message: "Recieved new <b>Donation</b>."
+      },{
+        type: 'success',
+        timer: 100
+      });
+      $.notify({
+        icon: 'pe-7s-paint-bucket',
+        message: "Recieved new <b>Donation</b>."
+      },{
+        type: 'success',
+        timer: 100
+      });
+      $.notify({
+        icon: 'pe-7s-look',
+        message: "Daily donation average <b>Dropped</b>."
+      },{
+        type: 'warning',
+        timer: 100
+      });
+    });
+     
+>>>>>>> 472610b026bc32bf6c77ba08ee7cf0e1a1af91bb
