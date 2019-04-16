@@ -29,7 +29,8 @@ head
   script(src='javascripts/light-bootstrap-dashboard.js?v=1.4.0')
   // Light Bootstrap Table DEMO methods, don't include it in your project!
   script(src='javascripts/demo.js')
-  
+  script(src='javascripts/postonedit.js')
+
   
 .wrapper
   .sidebar(data-color='grey' data-image='images/sidebar-5.jpg')
@@ -66,5 +67,6 @@ head
           a(href='registration')
             i.pe-7s-add-user
             p Registration
+  #hidden_form_container(style='display:none;')
   .main-panel
     block content

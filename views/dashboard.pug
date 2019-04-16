@@ -188,41 +188,15 @@ block content
                     i.fa.fa-history
                     |  Updated 3 minutes ago
     script.
-     $().ready(function(){      
+      $().ready(function(){      
       $("li").each(function(k,v){      
-      if($(this).text() === "Dashboard"){
-      $(this).attr("class", "active");
-      }
-      });
-     
-      $.notify({
-      icon: 'pe-7s-gift',
-      message: "Welcome to <b>HelpingBlock</b>."
-      },{
-      type: 'info',
-      timer: 100
-      });
-      $.notify({
-      icon: 'pe-7s-paint-bucket',
-      message: "Recieved new <b>Donation</b>."
-      },{
-      type: 'success',
-      timer: 100
-      });
-      $.notify({
-      icon: 'pe-7s-paint-bucket',
-      message: "Recieved new <b>Donation</b>."
-      },{
-      type: 'success',
-      timer: 100
-      });
-      $.notify({
-      icon: 'pe-7s-look',
-      message: "Daily donation average <b>Dropped</b>."
-      },{
-      type: 'warning',
-      timer: 100
-      });
-      });
-      });
-     
+        if($(this).text() === "Dashboard")
+        {
+          $(this).attr("class", "active");
+        }
+      });     
+      $.notify({ icon: 'pe-7s-gift', message: "Welcome to <b>HelpingBlock</b>." },{ type: 'info', timer: 100  });
+      $.notify({ icon: 'pe-7s-paint-bucket', message: "Recieved new <b>Donation</b>." },{ type: 'success', timer: 100 });
+      $.notify({ icon: 'pe-7s-paint-bucket', message: "Recieved new <b>Donation</b>." },{ type: 'success', timer: 100 });
+      $.notify({ icon: 'pe-7s-look', message: "Daily donation average <b>Dropped</b>." },{ type: 'warning', timer: 100 });
+      });          

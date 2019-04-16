@@ -52,40 +52,41 @@ block content
         .header
           h4.title Register Recipients
         .content
-          form
+          form(action='/registration' method='post')
+            input.form-control(type="hidden" name='registerrecpient')
             .row
               .col-md-4
                 .form-group
                   label Name
-                  input.form-control(type='text' placeholder='Name' value='')
+                  input.form-control(type='text' placeholder='Name' value='' name='name')
               .col-md-4
                 .form-group
                   label Contact No.
-                  input.form-control(type='number' placeholder='Contact No.')
+                  input.form-control(type='number' placeholder='Contact No.' name='contactno')
               .col-md-4
                 .form-group
                   label CNIC
-                  input.form-control(type='number'  maxlength="13" size="13")                  
+                  input.form-control(type='number'  maxlength="13" size="13" name='cnic')                  
             .row
               .col-md-12
                 .form-group
                   label Address
-                  input.form-control(type='text' placeholder='Shop Address' value='')
+                  input.form-control(type='text' placeholder='Shop Address' value='' name='homeaddress')
               .col-md-4
                 .form-group
                   label City
-                  input.form-control(type='text' placeholder='City' value='')
+                  input.form-control(type='text' placeholder='City' value='' name='city')
               .col-md-3
                 .form-group
                   label Gender
-                  select.form-control
+                  select.form-control(name='gender')
                     option(value='Male') Male
                     option(value='Female') Female
                     option(value='Other') Other
               .col-md-2
                 .form-group
                   label Age
-                  input.form-control(type='number' placeholder='Age' value='')
+                  input.form-control(type='number' placeholder='Age' value='' name='age')
             button.btn.btn-info.btn-fill.pull-right(type='submit') Register Recipient
             .clearfix        
     .col-md-8
@@ -93,29 +94,30 @@ block content
         .header
           h4.title Register Shopkeeper
         .content
-          form
+          form(action='/registration' method='post')
+            input.form-control(type="hidden" name='registershopkeeper')
             .row
               .col-md-4
                 .form-group
                   label Name
-                  input.form-control(type='text' placeholder='Name' value='')
+                  input.form-control(type='text' placeholder='Name' value='' name='name')
               .col-md-4
                 .form-group
                   label Contact No.
-                  input.form-control(type='number' placeholder='Contact No.')
+                  input.form-control(type='number' placeholder='Contact No.' name='contactno')
               .col-md-4
                 .form-group
                   label CNIC
-                  input.form-control(type='number'  maxlength="13" size="13")                  
+                  input.form-control(type='number'  maxlength="13" size="13" name='cnic')                  
             .row
               .col-md-12
                 .form-group
                   label Shop Address
-                  input.form-control(type='text' placeholder='Shop Address' value='')
+                  input.form-control(type='text' placeholder='Shop Address' value='' name='shopaddress')
               .col-md-4
                 .form-group
                   label City
-                  input.form-control(type='text' placeholder='City' value='')  
+                  input.form-control(type='text' placeholder='City' value='' name='city')  
             button.btn.btn-info.btn-fill.pull-right(type='submit') Register Shopkeeper
             .clearfix
     //- .content

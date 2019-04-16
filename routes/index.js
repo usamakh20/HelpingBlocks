@@ -25,6 +25,8 @@ router.post('/register',function (req,res) {
     });
 });
 
+
+
 router.post('/login',user_middleware.login,function (req,res,next) {
     if (req.middleware.error) {
         console.log(req.middleware.error);
@@ -37,7 +39,8 @@ router.post('/login',user_middleware.login,function (req,res,next) {
     }
 });
 
-router.get('/test',function(req,res){
+router.post('/test',function(req,res){
+    console.log(req.body);
     if(!req.session.userData)
         return res.status(401).send({message:'Login first'});
     else return res.status(200).send({message:'Welcome to Dashboard'});
@@ -80,33 +83,84 @@ router.get('/dashboard',user_middleware.auth,function(req,res){
 
 
 router.get('/staff',user_middleware.auth,function(req,res){
-    res.render('staff');
+    res.render('staff',
+    {
+        table:[
+            {ID:"1", name:"oName 1", contact:"oContact 1", email:"oEmail 1", role:"oRole 1", city:"oCity 1"},
+            {ID:"2", name:"oName 2", contact:"oContact 2", email:"oEmail 2", role:"oRole 2", city:"oCity 2"},
+            {ID:"3", name:"oName 3", contact:"oContact 3", email:"oEmail 3", role:"oRole 3", city:"oCity 3"},
+            {ID:"4", name:"oName 4", contact:"oContact 4", email:"oEmail 4", role:"oRole 4", city:"oCity 4"}
+        ]
+    });
 });
+router.post('/staff',user_middleware.auth,function(req,res,next){
+    console.log(req.body);    
+    res.render('staff',
+    {
+        table:[
+            {ID:"1", name:"mName 1", contact:"mContact 1", email:"mEmail 1", role:"mRole 1", city:"mCity 1"},
+            {ID:"2", name:"mName 2", contact:"mContact 2", email:"mEmail 2", role:"mRole 2", city:"mCity 2"},
+            {ID:"3", name:"mName 3", contact:"mContact 3", email:"mEmail 3", role:"mRole 3", city:"mCity 3"},
+            {ID:"4", name:"mName 4", contact:"mContact 4", email:"mEmail 4", role:"mRole 4", city:"mCity 4"}
+        ]
+    });
+});
+
 
 
 router.get('/maps',user_middleware.auth,function(req,res){
     res.render('maps');
-
 });
+
 
 router.get('/finances',user_middleware.auth,function(req,res){
     res.render('finances');
-
 });
+router.post('/finances',user_middleware.auth,function(req,res){
+    res.redirect('finances');
+});
+
+
 
 router.get('/donations',user_middleware.auth,function(req,res){
-    res.render('donations');
-
+    res.render('donations',
+    {
+        table:[
+            {ID:"1", name:"oName 1", contact:"oContact 1", email:"oEmail 1", city:"oCity 1"},
+            {ID:"2", name:"oName 2", contact:"oContact 2", email:"oEmail 2", city:"oCity 2"},
+            {ID:"3", name:"oName 3", contact:"oContact 3", email:"oEmail 3", city:"oCity 3"},
+            {ID:"4", name:"oName 4", contact:"oContact 4", email:"oEmail 4", city:"oCity 4"}
+        ]
+    });
 });
+router.post('/donations',user_middleware.auth,function(req,res){
+    res.render('donations',
+    {
+        table:[
+            {ID:"1", name:"mName 1", contact:"mContact 1", email:"mEmail 1", city:"mCity 1"},
+            {ID:"2", name:"mName 2", contact:"mContact 2", email:"mEmail 2", city:"mCity 2"},
+            {ID:"3", name:"mName 3", contact:"mContact 3", email:"mEmail 3", city:"mCity 3"},
+            {ID:"4", name:"mName 4", contact:"mContact 4", email:"mEmail 4", city:"mCity 4"}
+        ]
+    });
+});
+
 
 router.get('/registration',user_middleware.auth,function(req,res){
     res.render('registration');
       
 });
+router.post('/registration',user_middleware.auth,function(req,res){
+    res.redirect('registration');      
+});
+
+
 
 router.get('/shopkeeper',user_middleware.auth,function(req,res){
-    res.render('shopkeeper');
-      
+    res.render('shopkeeper');      
+});
+router.posr('/shopkeeper',user_middleware.auth,function(req,res){
+    res.redirect('shopkeeper');      
 });
 
 module.exports = router;

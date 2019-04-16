@@ -88,12 +88,13 @@ block content
         .header
           h4.title Add a Recipient to Donation List          
         .content
-          form
+          form(action='/donation' method='post')
+            input.form-control(type="hidden" name='addrecipient')
             .row
               .col-md-6
                 .form-group
                   label Recipient Name
-                  select.form-control
+                  select.form-control(name='name')
                     option(value='Name 1') Name 1
                     option(value='Name 2') Name 2
                     option(value='Name 3') Name 3
@@ -101,7 +102,7 @@ block content
               .col-md-6
                 .form-group
                   label Donation List
-                  select.form-control
+                  select.form-control(name='listname')
                     option(value='List 1') List 1
                     option(value='List 2') List 2
                     option(value='List 3') List 3
@@ -110,7 +111,7 @@ block content
               .col-md-4
                 .form-group
                   label Amount Recieveable
-                  input.form-control(type="number" min="0" placeholder='Rs. 1000')
+                  input.form-control(type="number" min="0" placeholder='Rs. 1000' name='amount')
             button.btn.btn-info.btn-fill.pull-right(type='submit') Add New Recipient
             .clearfix
     .col-md-8
@@ -118,16 +119,17 @@ block content
         .header
           h4.title Create New Donation List          
         .content
-          form
+          form(action='/donation' method='post')
+            input.form-control(type="hidden" name='newlist')
             .row
               .col-md-6
                 .form-group
                   label List Title
-                  input.form-control(type='text' placeholder='Title' value='')
+                  input.form-control(type='text' placeholder='Title' value='' name='listtitle')
               .col-md-6
                 .form-group
                   label List Unique Identifier
-                  select.form-control
+                  select.form-control(name='listidentifier')
                     option(value='List 1') List 1
                     option(value='List 2') List 2
                     option(value='List 3') List 3
@@ -216,46 +218,25 @@ block content
                     th Address
                     th Action
                   tbody
+                  each row in table
                     tr
-                      td 1
-                      td(contenteditable='false') Name 1
-                      td(contenteditable='false') 03000000000
-                      td 0000-0000000-0
-                      td Address 1
-                      td
-                        button.editbtn.btn-warning.btn-fill Edit
-                        <span>  </span>
-                        button.rmvbtn.btn-danger.btn-fill Remove 
-                    tr
-                      td 2
-                      td(contenteditable='false') Name 2
-                      td(contenteditable='false') 03000000000
-                      td 0000-0000000-0
-                      td Address 2
-                      td
-                        button.editbtn.btn-warning.btn-fill Edit
-                        <span>  </span>
-                        button.rmvbtn.btn-danger.btn-fill Remove
-                    tr
-                      td 3
-                      td(contenteditable='false') Name 3
-                      td(contenteditable='false') 03000000000
-                      td 0000-0000000-0
-                      td Address 3
-                      td
-                        button.editbtn.btn-warning.btn-fill Edit
-                        <span>  </span>
-                        button.rmvbtn.btn-danger.btn-fill Remove
-                    tr
-                      td 4
-                      td(contenteditable='false') Name 4
-                      td(contenteditable='false') 03000000000
-                      td 0000-0000000-0
-                      td Address 4
-                      td
-                        button.editbtn.btn-warning.btn-fill Edit
-                        <span>  </span>
-                        button.rmvbtn.btn-danger.btn-fill Remove
+                    each clm in row
+                      td #{clm}
+                    td
+                      button.editbtn.btn-warning.btn-fill Edit
+                      <span>  </span>
+                      button.rmvbtn.btn-danger.btn-fill Remove  
+                    //- tr
+                    //-   td 1
+                    //-   td(contenteditable='false') Name 1
+                    //-   td(contenteditable='false') 03000000000
+                    //-   td 0000-0000000-0
+                    //-   td Address 1
+                    //-   td
+                    //-     button.editbtn.btn-warning.btn-fill Edit
+                    //-     <span>  </span>
+                    //-     button.rmvbtn.btn-danger.btn-fill Remove 
+                    
                     
           //- .col-md-12
           //-   .card.card-plain
@@ -301,28 +282,10 @@ block content
     script.
      $().ready(function(){
       $("li").each(function(k,v){      
-      if($(this).text() === "Donations"){
-      $(this).attr("class", "active");
-      }
+        if($(this).text() === "Donations"
+        {
+          $(this).attr("class", "active");
+        }
       });
-      });
-      $('.editbtn').click(function () {
-      
-      var currentTD = $(this).parents('tr').find('td');
-      if ($(this).html() == 'Edit') {
-      currentTD = $(this).parents('tr').find('td');
-      var i = 0;
-      $.each(currentTD, function (i) {
-      if(i < 3){
-      $(this).prop('contenteditable', true);      
-      i = i+1;
-      }
-      });
-      } else {
-      $.each(currentTD, function () {
-      $(this).prop('contenteditable', false)
-      });
-      }
-      $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
-      });
+     });
       

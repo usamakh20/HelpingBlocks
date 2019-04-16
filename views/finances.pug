@@ -56,20 +56,20 @@ block content
         .header
           h4.title Create New Donation
         .content
-          form
+          form(action='/finances' method='post')
             .row
               .col-md-5
                 .form-group
                   label Name
-                  input.form-control(type='text' placeholder='Full Name' value='')
+                  input.form-control(type='text' placeholder='Full Name' value='' name='name')
               .col-md-5
                 .form-group
                   label CNIC
-                  input.form-control(type='text' placeholder='CNIC' value='')
+                  input.form-control(type='text' placeholder='CNIC' value='' name='cnic')
               .col-md-6
                 .form-group
                   label Amount
-                  input.form-control(type='text' placeholder='Amount' value='')              
+                  input.form-control(type='text' placeholder='Amount' value='' name='amount')              
             button.btn.btn-info.btn-fill.pull-right(type='submit') Create Donation
             .clearfix
     
@@ -124,27 +124,11 @@ block content
     
     
     script.
-     $().ready(function(){
-      $(document).ready(function(){
+     $().ready(function(){      
       $("li").each(function(k,v){      
-      if($(this).text() === "Finances"){
-      $(this).attr("class", "active");
-      }
+        if($(this).text() === "Finances")
+        {
+          $(this).attr("class", "active");
+        }
       });
-      });
-      $('.editbtn').click(function () {
-      
-      var currentTD = $(this).parents('tr').find('td');
-      if ($(this).html() == 'Edit') {
-      currentTD = $(this).parents('tr').find('td');
-      $.each(currentTD, function () {
-      $(this).prop('contenteditable', true)
-      });
-      } else {
-      $.each(currentTD, function () {
-      $(this).prop('contenteditable', false)
-      });
-      }
-      $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
-      });
-      });
+     });
