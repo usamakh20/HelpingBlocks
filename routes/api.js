@@ -23,7 +23,7 @@ router.post('/register',function (req,res) {
     });
 });
 
-router.post('/login/donor',function (req,res) {
+router.post('/donor/login',function (req,res) {
     user.findOne({CNIC:req.body.CNIC},function(err,user) {
         if (err)
             return res.status(500).send({message: 'server error'});
@@ -49,13 +49,13 @@ router.post('/login/donor',function (req,res) {
 });
 
 
-router.post('/login/shopkeeper',user_middleware.login,function (req,res) {
+router.post('/shopkeeper/login',user_middleware.login,function (req,res) {
     if (req.middleware.error)
         return res.status(500).send({error: req.middleware.error});
 
     else {
         const token = jwt.sign({
-            userId: req.body.username,
+            userId: req.body.CNIC,
             client_token: req.middleware.client_token
         }, process.env.PWD, {
             expiresIn: "1h"
@@ -64,8 +64,8 @@ router.post('/login/shopkeeper',user_middleware.login,function (req,res) {
     }
 });
 
-router.get('/testLogin',user_middleware.api_auth,function(req,res){
-    return res.status(200).send({message:'You are Logged in'});
+router.get('/testToken',user_middleware.api_auth,function(req,res){
+    return res.status(200).send({message:'success'});
 });
 
 
@@ -93,7 +93,7 @@ router.get('/donation',user_middleware.api_auth,function(req,res){
     //
     // });
 
-    return res.status(200).send({donations: [
+    return res.status(200).send({message:'success', donations: [
             {id:"242341",date:"Monday, Apr 23, 2019",amount:45},
             {id:"337567",date:"Tuesday, Feb 18, 2019",amount:2638},
             {id:"4324",date:"Friday, May 12, 2019",amount:863},
@@ -116,7 +116,8 @@ router.get('/donation/:id',user_middleware.api_auth,function(req,res){
     //
     // });
 
-    return res.status(200).send({message:{
+    return res.status(200).send({message: 'success',
+        result:{
             CNIC:"4257193004533",
             name:"Tanveer",
             amount:5765667,
@@ -124,6 +125,113 @@ router.get('/donation/:id',user_middleware.api_auth,function(req,res){
             signer:{id:0x56567af4, name:"Umer"},
             trackingInfo:[{},{},{},{},{}]
         }});
+});
+
+router.post('/otp',user_middleware.api_auth,function (req,res) {
+    //Todo: Add transaction to parity using web3
+
+    // user.updateOne({CNIC:req.UserData.CNIC},{$push: { donations: req.body.id}},function (err,user) {
+    //     if (err)
+    //         return res.status(500).send({message: 'Server Error'});
+    //
+    //     else return res.status(200).send({message: 'Donation id is saved'});
+    // });
+
+    return res.status(200).send({message: 'success'});
+});
+
+router.post('/transaction',user_middleware.api_auth,function (req,res) {
+    //Todo: Add transaction to parity using web3
+
+    // user.updateOne({CNIC:req.UserData.CNIC},{$push: { donations: req.body.id}},function (err,user) {
+    //     if (err)
+    //         return res.status(500).send({message: 'Server Error'});
+    //
+    //     else return res.status(200).send({message: 'Donation id is saved'});
+    // });
+
+    return res.status(200).send({message: 'success',transaction_id:"47547546"});
+});
+
+router.get('/transaction',user_middleware.api_auth,function(req,res){
+    //Todo: Retrieve donations from parity using web3
+
+    // user.findOne({_id:req.UserData.userId},function(err,user) {
+    //     if (err)
+    //         return res.status(500).send({message: 'Server Error'});
+    //
+    //     else return res.status(200).send({donation_ids: user.donations});
+    //
+    // });
+
+    return res.status(200).send({message:'success', transactions: [
+            {id:"242341",date:"Monday, Apr 23, 2019",amount:45,recipient:"Zain Bashir"},
+            {id:"337567",date:"Tuesday, Feb 18, 2019",amount:2638,recipient:"Hamid bajwa"},
+            {id:"4324",date:"Friday, May 12, 2019",amount:863,recipient:"Hussain juneja"},
+            {id:"312",date:"Wednesday, July 2, 2019",amount:3754,recipient:"Kamal bengali"},
+            {id:"4234244",date:"Thursday, June 9, 2019",amount:43,recipient:"Arshad chucha"},
+            {id:"65",date:"Sunday, Sept 16, 2019",amount:454978,recipient:"Sana mirza"},
+            {id:"26545632",date:"Friday, Oct 1, 2019",amount:79449,recipient:"Begum nawazish mir"},
+            {id:"346563665",date:"Saturday, Dec 5, 2019",amount:46236,recipient:"Rao murshid"}
+        ]});
+});
+
+router.get('/transaction/:id',user_middleware.api_auth,function(req,res){
+    //Todo: Retrieve donations from parity using web3
+
+    // user.findOne({_id:req.UserData.userId},function(err,user) {
+    //     if (err)
+    //         return res.status(500).send({message: 'Server Error'});
+    //
+    //     else return res.status(200).send({donation_ids: user.donations});
+    //
+    // });
+
+    return res.status(200).send({message: 'success',
+        result:{
+            CNIC:"4257193004533",
+            name:"Tanveer Khan",
+            amount:5765667,
+            timestamp:1555597802,
+            signer:{id:0x56567af4, name:"Umer "},
+            items_bought:["Daal","Sugar","Tomatoes","Onions","Milk"]
+        }});
+});
+
+router.post('/receivable',user_middleware.api_auth,function (req,res) {
+    //Todo: Confirm Payment received to parity using web3
+
+    // user.updateOne({CNIC:req.UserData.CNIC},{$push: { donations: req.body.id}},function (err,user) {
+    //     if (err)
+    //         return res.status(500).send({message: 'Server Error'});
+    //
+    //     else return res.status(200).send({message: 'Donation id is saved'});
+    // });
+
+    return res.status(200).send({message: 'success'});
+});
+
+router.get('/receivable',user_middleware.api_auth,function(req,res){
+    //Todo: Retrieve donations from parity using web3
+
+    // user.findOne({_id:req.UserData.userId},function(err,user) {
+    //     if (err)
+    //         return res.status(500).send({message: 'Server Error'});
+    //
+    //     else return res.status(200).send({donation_ids: user.donations});
+    //
+    // });
+
+    return res.status(200).send({message:'success', transactions: [
+            {id:"2441",date:"Monday, Apr 23, 2019",amount:45},
+            {id:"3567",date:"Tuesday, Feb 18, 2019",amount:2638},
+            {id:"4324",date:"Friday, May 12, 2019",amount:863},
+            {id:"31275",date:"Wednesday, July 2, 2019",amount:3754},
+            {id:"42344",date:"Thursday, June 9, 2019",amount:43},
+            {id:"6575",date:"Sunday, Sept 16, 2019",amount:454978},
+            {id:"25632",date:"Friday, Oct 1, 2019",amount:79449},
+            {id:"3456",date:"Saturday, Dec 5, 2019",amount:46236}
+        ]});
 });
 
 module.exports = router;

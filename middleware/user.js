@@ -56,7 +56,7 @@ exports.login = (req,res,next) => {
 };
 
 exports.registerEthereum = (req,res,next) => {
-    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.username)
+    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.CNIC)
         .set(Header)
         .send()
         .then(result => {
@@ -71,7 +71,7 @@ exports.registerEthereum = (req,res,next) => {
 
 
 exports.signTX = (req,res,next) => {
-    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.username+'sign-tx')
+    superAgent.post(baseUrl+'ethereum/accounts/'+req.body.CNIC+'sign-tx')
         .set(Header)
         .send({
             amount:req.body.amount,

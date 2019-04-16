@@ -309,7 +309,7 @@ block content
     $('.editbtn').click(function () {
 
       var currentTD = $(this).parents('tr').find('td');
-      if ($(this).html() == 'Edit') {
+      if ($(this).html() === 'Edit') {
         currentTD = $(this).parents('tr').find('td');
         var i = 0;
         $.each(currentTD, function (i) {
@@ -323,6 +323,6 @@ block content
           $(this).prop('contenteditable', false)
         });
       }
-      $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
+      $(this).html($(this).html() === 'Edit' ? 'Save' : 'Edit')
     });
       
