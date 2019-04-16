@@ -1,139 +1,139 @@
 extends layout2
 
 block content 
-    nav.navbar.navbar-default.navbar-fixed
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='#') User
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-left
-            li.dropdown
-              a.dropdown-toggle(href='#' data-toggle='dropdown')
-                i.fa.fa-globe
-                b.caret.hidden-sm.hidden-xs
-                span.notification.hidden-sm.hidden-xs 5
-                p.hidden-lg.hidden-md
-                  | 2 Notifications
-                  b.caret
-              ul.dropdown-menu
-                li
-                  a(href='#') Notification 1
-                li
-                  a(href='#') Notification 2
-          ul.nav.navbar-nav.navbar-right
-            li.dropdown
-              a.dropdown-toggle(href='#' data-toggle='dropdown')
-                p
-                  | Options
-                  b.caret
-              ul.dropdown-menu
-                li
-                  a(href='#') Option
-                li
-                  a(href='#') Option 2
-                li
-                  a(href='#') Option 3
-                li
-                  a(href='#') Option 3
-                li.divider
-                li
-                  a(href='#') Separated Option
-            li
-              a(href='#')
-                p Log out
-            li.separator.hidden-lg.hidden-md
-    .content
-      .container-fluid
-        .row
-          .col-md-8
-            .card
-              .header
-                h4.title Edit Profile
-              .content
-                form
-                  .row
-                    .col-md-5
-                      .form-group
-                        label Company (disabled)
-                        input.form-control(type='text' disabled='' placeholder='Company' value='Creative Code Inc.')
-                    .col-md-3
-                      .form-group
-                        label Username
-                        input.form-control(type='text' placeholder='Username' value='michael23')
-                    .col-md-4
-                      .form-group
-                        label(for='exampleInputEmail1') Email address
-                        input.form-control(type='email' placeholder='Email')
-                  .row
-                    .col-md-6
-                      .form-group
-                        label First Name
-                        input.form-control(type='text' placeholder='Company' value='Mike')
-                    .col-md-6
-                      .form-group
-                        label Last Name
-                        input.form-control(type='text' placeholder='Last Name' value='Andrew')
-                  .row
-                    .col-md-12
-                      .form-group
-                        label Address
-                        input.form-control(type='text' placeholder='Home Address' value='Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09')
-                  .row
-                    .col-md-4
-                      .form-group
-                        label City
-                        input.form-control(type='text' placeholder='City' value='Mike')
-                    .col-md-4
-                      .form-group
-                        label Country
-                        input.form-control(type='text' placeholder='Country' value='Andrew')
-                    .col-md-4
-                      .form-group
-                        label Postal Code
-                        input.form-control(type='number' placeholder='ZIP Code')
-                  .row
-                    .col-md-12
-                      .form-group
-                        label About Me
-                        textarea.form-control(rows='5' placeholder='Here can be your description' value='Mike') Lamborghini Mercy, Your chick she so thirsty, I&apos;m in that two seat Lambo.
-                  button.btn.btn-info.btn-fill.pull-right(type='submit') Update Profile
-                  .clearfix
-          .col-md-4
-            .card.card-user
-              .image
-                img(src='https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400' alt='...')
-              .content
-                .author
-                  a(href='#')
-                    img.avatar.border-gray(src='assets/img/faces/face-3.jpg' alt='...')
-                    h4.title
-                      | Mike Andrew
-                      br
-                      small michael24
-                p.description.text-center
-                  | &quot;Lamborghini Mercy 
-                  br
-                  |                                                     Your chick she so thirsty 
-                  br
-                  |                                                     I&apos;m in that two seat Lambo&quot;
-              hr
-              .text-center
-                button.btn.btn-simple(href='#')
-                  i.fa.fa-facebook-square
-                button.btn.btn-simple(href='#')
-                  i.fa.fa-twitter
-                button.btn.btn-simple(href='#')
-                  i.fa.fa-google-plus-square
-    script.
-     $().ready(function(){
-      $("li").each(function(k,v){      
-      if($(this).text() === "Users"){
-      $(this).attr("class", "active");
-      }
-      });      
+  nav.navbar.navbar-default.navbar-fixed
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#') User
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-left
+          li.dropdown
+            a.dropdown-toggle(href='#' data-toggle='dropdown')
+              i.fa.fa-globe
+              b.caret.hidden-sm.hidden-xs
+              span.notification.hidden-sm.hidden-xs 5
+              p.hidden-lg.hidden-md
+                | 2 Notifications
+                b.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Notification 1
+              li
+                a(href='#') Notification 2
+        ul.nav.navbar-nav.navbar-right
+          li.dropdown
+            a.dropdown-toggle(href='#' data-toggle='dropdown')
+              p
+                | Options
+                b.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Option
+              li
+                a(href='#') Option 2
+              li
+                a(href='#') Option 3
+              li
+                a(href='#') Option 3
+              li.divider
+              li
+                a(href='#') Separated Option
+          li
+            a(href='#')
+              p Log out
+          li.separator.hidden-lg.hidden-md
+  .content
+    .container-fluid
+      .row
+        .col-md-8
+          .card
+            .header
+              h4.title Edit Profile
+            .content
+              form
+                .row
+                  .col-md-5
+                    .form-group
+                      label Company (disabled)
+                      input.form-control(type='text' disabled='' placeholder='Company' value='Creative Code Inc.')
+                  .col-md-3
+                    .form-group
+                      label Username
+                      input.form-control(type='text' placeholder='Username' value='michael23')
+                  .col-md-4
+                    .form-group
+                      label(for='exampleInputEmail1') Email address
+                      input.form-control(type='email' placeholder='Email')
+                .row
+                  .col-md-6
+                    .form-group
+                      label First Name
+                      input.form-control(type='text' placeholder='Company' value='Mike')
+                  .col-md-6
+                    .form-group
+                      label Last Name
+                      input.form-control(type='text' placeholder='Last Name' value='Andrew')
+                .row
+                  .col-md-12
+                    .form-group
+                      label Address
+                      input.form-control(type='text' placeholder='Home Address' value='Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09')
+                .row
+                  .col-md-4
+                    .form-group
+                      label City
+                      input.form-control(type='text' placeholder='City' value='Mike')
+                  .col-md-4
+                    .form-group
+                      label Country
+                      input.form-control(type='text' placeholder='Country' value='Andrew')
+                  .col-md-4
+                    .form-group
+                      label Postal Code
+                      input.form-control(type='number' placeholder='ZIP Code')
+                .row
+                  .col-md-12
+                    .form-group
+                      label About Me
+                      textarea.form-control(rows='5' placeholder='Here can be your description' value='Mike') Lamborghini Mercy, Your chick she so thirsty, I&apos;m in that two seat Lambo.
+                button.btn.btn-info.btn-fill.pull-right(type='submit') Update Profile
+                .clearfix
+        .col-md-4
+          .card.card-user
+            .image
+              img(src='https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400' alt='...')
+            .content
+              .author
+                a(href='#')
+                  img.avatar.border-gray(src='assets/img/faces/face-3.jpg' alt='...')
+                  h4.title
+                    | Mike Andrew
+                    br
+                    small michael24
+              p.description.text-center
+                | &quot;Lamborghini Mercy
+                br
+                |                                                     Your chick she so thirsty
+                br
+                |                                                     I&apos;m in that two seat Lambo&quot;
+            hr
+            .text-center
+              button.btn.btn-simple(href='#')
+                i.fa.fa-facebook-square
+              button.btn.btn-simple(href='#')
+                i.fa.fa-twitter
+              button.btn.btn-simple(href='#')
+                i.fa.fa-google-plus-square
+  script.
+    $().ready(function(){
+      $("li").each(function(k,v){
+        if($(this).text() === "Users"){
+          $(this).attr("class", "active");
+        }
       });
+    });
