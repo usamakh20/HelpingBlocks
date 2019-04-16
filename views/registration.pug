@@ -1,206 +1,6 @@
 extends layout2
 
-block content 
-<<<<<<< HEAD
-    nav.navbar.navbar-default.navbar-fixed
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle(type='button' data-toggle='collapse' data-target='#navigation-example-2')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='#') Registration
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-left
-            li.dropdown
-              a.dropdown-toggle(href='#' data-toggle='dropdown')
-                i.fa.fa-globe
-                b.caret.hidden-sm.hidden-xs
-                span.notification.hidden-sm.hidden-xs 5
-                p.hidden-lg.hidden-md
-                  | 2 Notifications
-                  b.caret
-              ul.dropdown-menu
-                li
-                  a(href='#') Notification 1
-                li
-                  a(href='#') Notification 2
-          ul.nav.navbar-nav.navbar-right
-            li.dropdown
-              a.dropdown-toggle(href='#' data-toggle='dropdown')
-                p
-                  | Options
-                  b.caret
-              ul.dropdown-menu
-                li
-                  a(href='#') Option
-                li
-                  a(href='#') Option 2
-                li
-                  a(href='#') Option 3
-                li
-                  a(href='#') Option 3
-                li.divider
-                li
-                  a(href='#') Separated Option
-            li
-              a(href='#')
-                p Log out
-            li.separator.hidden-lg.hidden-md
-    .col-md-8
-      .card
-        .header
-          h4.title Register Recipients
-        .content
-          form(action='/registration' method='post')
-            input.form-control(type="hidden" name='registerrecpient')
-            .row
-              .col-md-4
-                .form-group
-                  label Name
-                  input.form-control(type='text' placeholder='Name' value='' name='name')
-              .col-md-4
-                .form-group
-                  label Contact No.
-                  input.form-control(type='number' placeholder='Contact No.' name='contactno')
-              .col-md-4
-                .form-group
-                  label CNIC
-                  input.form-control(type='number'  maxlength="13" size="13" name='cnic')                  
-            .row
-              .col-md-12
-                .form-group
-                  label Address
-                  input.form-control(type='text' placeholder='Shop Address' value='' name='homeaddress')
-              .col-md-4
-                .form-group
-                  label City
-                  input.form-control(type='text' placeholder='City' value='' name='city')
-              .col-md-3
-                .form-group
-                  label Gender
-                  select.form-control(name='gender')
-                    option(value='Male') Male
-                    option(value='Female') Female
-                    option(value='Other') Other
-              .col-md-2
-                .form-group
-                  label Age
-                  input.form-control(type='number' placeholder='Age' value='' name='age')
-            button.btn.btn-info.btn-fill.pull-right(type='submit') Register Recipient
-            .clearfix        
-    .col-md-8
-      .card
-        .header
-          h4.title Register Shopkeeper
-        .content
-          form(action='/registration' method='post')
-            input.form-control(type="hidden" name='registershopkeeper')
-            .row
-              .col-md-4
-                .form-group
-                  label Name
-                  input.form-control(type='text' placeholder='Name' value='' name='name')
-              .col-md-4
-                .form-group
-                  label Contact No.
-                  input.form-control(type='number' placeholder='Contact No.' name='contactno')
-              .col-md-4
-                .form-group
-                  label CNIC
-                  input.form-control(type='number'  maxlength="13" size="13" name='cnic')                  
-            .row
-              .col-md-12
-                .form-group
-                  label Shop Address
-                  input.form-control(type='text' placeholder='Shop Address' value='' name='shopaddress')
-              .col-md-4
-                .form-group
-                  label City
-                  input.form-control(type='text' placeholder='City' value='' name='city')  
-            button.btn.btn-info.btn-fill.pull-right(type='submit') Register Shopkeeper
-            .clearfix
-    //- .content
-    //-   .container-fluid
-    //-     .row
-    //-       .col-md-12
-    //-         .card
-    //-           .header
-    //-             h4.title Employss List
-    //-             p.category List of Staff Memebers
-    //-           .content.table-responsive.table-full-width
-    //-             table.table.table-hover.table-striped
-    //-               thead
-    //-                 th ID
-    //-                 th Name
-    //-                 th Salary
-    //-                 th Role
-    //-                 th City
-    //-               tbody
-    //-                 tr
-    //-                   td 1
-    //-                   td Dakota Rice
-    //-                   td $36,738
-    //-                   td Niger
-    //-                   td Oud-Turnhout
-    //-                 tr
-    //-                   td 2
-    //-                   td Minerva Hooper
-    //-                   td $23,789
-    //-                   td Cura&ccedil;ao
-    //-                   td Sinaai-Waas
-    //-                 tr
-    //-                   td 3
-    //-                   td Sage Rodriguez
-    //-                   td $56,142
-    //-                   td Netherlands
-    //-                   td Baileux
-    //-                 tr
-    //-                   td 4
-    //-                   td Philip Chaney
-    //-                   td $38,735
-    //-                   td Korea, South
-    //-                   td Overland Park
-    //-                 tr
-    //-                   td 5
-    //-                   td Doris Greene
-    //-                   td $63,542
-    //-                   td Malawi
-    //-                   td Feldkirchen in K&auml;rnten
-    //-                 tr
-    //-                   td 6
-    //-                   td Mason Porter
-    //-                   td $78,615
-    //-                   td Chile
-    //-                   td Gloucester
-    //-                 tr
-    //-                   td 6
-    //-                   td Mason Porter
-    //-                   td $78,615
-    //-                   td Chile
-    //-                   td Gloucester
-    //-                 tr
-    //-                   td 6
-    //-                   td Mason Porter
-    //-                   td $78,615
-    //-                   td Chile
-    //-                   td Gloucester
-    //-                 tr
-    //-                   td 6
-    //-                   td Mason Porter
-    //-                   td $78,615
-    //-                   td Chile
-    //-                   td Gloucester
-    //-                 tr
-    //-                   td 6
-    //-                   td Mason Porter
-    //-                   td $78,615
-    //-                   td Chile
-    //-                   td Gloucester
-    script.
-     $().ready(function(){
-=======
+block content
   nav.navbar.navbar-default.navbar-fixed
     .container-fluid
       .navbar-header
@@ -252,40 +52,41 @@ block content
       .header
         h4.title Register Recipients
       .content
-        form
+        form(action='/registration' method='post')
+          input.form-control(type="hidden" name='registerrecpient')
           .row
             .col-md-4
               .form-group
                 label Name
-                input.form-control(type='text' placeholder='Name' value='')
+                input.form-control(type='text' placeholder='Name' value='' name='name')
             .col-md-4
               .form-group
                 label Contact No.
-                input.form-control(type='number' placeholder='Contact No.')
+                input.form-control(type='number' placeholder='Contact No.' name='contactno')
             .col-md-4
               .form-group
                 label CNIC
-                input.form-control(type='number'  maxlength="13" size="13")
+                input.form-control(type='number'  maxlength="13" size="13" name='cnic')
           .row
             .col-md-12
               .form-group
                 label Address
-                input.form-control(type='text' placeholder='Shop Address' value='')
+                input.form-control(type='text' placeholder='Shop Address' value='' name='homeaddress')
             .col-md-4
               .form-group
                 label City
-                input.form-control(type='text' placeholder='City' value='')
+                input.form-control(type='text' placeholder='City' value='' name='city')
             .col-md-3
               .form-group
                 label Gender
-                select.form-control
+                select.form-control(name='gender')
                   option(value='Male') Male
                   option(value='Female') Female
                   option(value='Other') Other
             .col-md-2
               .form-group
                 label Age
-                input.form-control(type='number' placeholder='Age' value='')
+                input.form-control(type='number' placeholder='Age' value='' name='age')
           button.btn.btn-info.btn-fill.pull-right(type='submit') Register Recipient
           .clearfix
   .col-md-8
@@ -293,29 +94,30 @@ block content
       .header
         h4.title Register Shopkeeper
       .content
-        form
+        form(action='/registration' method='post')
+          input.form-control(type="hidden" name='registershopkeeper')
           .row
             .col-md-4
               .form-group
                 label Name
-                input.form-control(type='text' placeholder='Name' value='')
+                input.form-control(type='text' placeholder='Name' value='' name='name')
             .col-md-4
               .form-group
                 label Contact No.
-                input.form-control(type='number' placeholder='Contact No.')
+                input.form-control(type='number' placeholder='Contact No.' name='contactno')
             .col-md-4
               .form-group
                 label CNIC
-                input.form-control(type='number'  maxlength="13" size="13")
+                input.form-control(type='number'  maxlength="13" size="13" name='cnic')
           .row
             .col-md-12
               .form-group
                 label Shop Address
-                input.form-control(type='text' placeholder='Shop Address' value='')
+                input.form-control(type='text' placeholder='Shop Address' value='' name='shopaddress')
             .col-md-4
               .form-group
                 label City
-                input.form-control(type='text' placeholder='City' value='')
+                input.form-control(type='text' placeholder='City' value='' name='city')
           button.btn.btn-info.btn-fill.pull-right(type='submit') Register Shopkeeper
           .clearfix
   //- .content
@@ -396,13 +198,10 @@ block content
   //-                   td Chile
   //-                   td Gloucester
   script.
-    $().ready(function(){
->>>>>>> 472610b026bc32bf6c77ba08ee7cf0e1a1af91bb
-      $(document).ready(function(){
-        $("li").each(function(k,v){
-          if($(this).text() === "Registration"){
-            $(this).attr("class", "active");
-          }
-        });
+    $(function(){
+      $("li").each(function(k,v){
+        if($(this).text() === "Registration"){
+          $(this).attr("class", "active");
+        }
       });
     });

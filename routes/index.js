@@ -155,7 +155,7 @@ router.post('/registration',user_middleware.auth,function(req,res){
 router.get('/shopkeeper',user_middleware.auth,function(req,res){
     res.render('shopkeeper');      
 });
-router.posr('/shopkeeper',user_middleware.auth,function(req,res){
+router.post('/shopkeeper',user_middleware.auth,function(req,res){
     res.redirect('shopkeeper');      
 });
 
