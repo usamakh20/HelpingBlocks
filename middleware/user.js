@@ -29,7 +29,7 @@ exports.register = (req,res,next) => {
             policy: "username"
         })
         .then(result => {
-            req.middleware = {message : result};
+            req.middleware = {message : result.body};
             next()
         })
         .catch(error => {
@@ -46,7 +46,7 @@ exports.login = (req,res,next) => {
             password:req.body.password
         })
         .then(result => {
-            req.middleware = {message : result.auth};
+            req.middleware = {message : result.body.auth};
             next()
         })
         .catch(error => {
@@ -60,7 +60,7 @@ exports.registerEthereum = (req,res,next) => {
         .set(Header)
         .send()
         .then(result => {
-            req.middleware = {message : result.data};
+            req.middleware = {message : result.body.data};
             next()
         })
         .catch(error => {
@@ -79,7 +79,7 @@ exports.signTX = (req,res,next) => {
             data:req.body.transaction_data
         })
         .then(result => {
-            req.middleware = {message : result};
+            req.middleware = {message : result.body};
             next()
         })
         .catch(error => {

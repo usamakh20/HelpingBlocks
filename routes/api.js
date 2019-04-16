@@ -56,7 +56,7 @@ router.post('/shopkeeper/login',user_middleware.login,function (req,res) {
     else {
         const token = jwt.sign({
             userId: req.body.CNIC,
-            client_token: req.middleware.client_token
+            client_token: req.middleware.message.client_token
         }, process.env.PWD, {
             expiresIn: "1h"
         });
