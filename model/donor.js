@@ -6,6 +6,11 @@ const userSchema = new mongoose.Schema({
     CNIC: {type: String, required:true, unique: true,minlength:13,maxlength:13},
     password: {type: String, required:true},
     name: String,
+    donations: [{
+        amount:Number,
+        timestamp:Number,
+        signer:{id:String, name:String},
+    }]
 });
 
 userSchema.pre('save',function(next){
@@ -37,4 +42,4 @@ userSchema.methods.comparePassword = function(candidatePassword, callback) {
 };
 
 
-module.exports = mongoose.model('donor.js', userSchema);
+module.exports = mongoose.model('donor', userSchema);

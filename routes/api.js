@@ -1,23 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const user = require('../model/donor');
+const donor = require('../model/donor');
 const jwt = require('jsonwebtoken');
 const user_middleware = require('../middleware/user');
+const contracts = require('../Contracts');
 
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index',{title:'Helping Blocks'});
 });
 
-router.get('/track', function(req,res){
-    var contracts = require('../Contracts');
-    contracts.DonationToken.methods.donations(0).call().then(function(r){
-        res.status(200).json(JSON.stringify(r));
+router.get('/track',user_middleware.api_auth,function(req,res){
+
+    contracts.DonationToken.methods.donations(0).call()
+        .then(result => {
+            return res.status(200).send({message: 'success', result: JSON.stringify(result)});
+        }).catch(error => {
+        return res.status(500).send({message: 'error'});
     })
-})
+});
 
 router.post('/register',function (req,res) {
-    new user({
+    new donor({
         CNIC: req.body.CNIC,
         password: req.body.password,
         name:req.body.name
@@ -31,7 +35,7 @@ router.post('/register',function (req,res) {
 });
 
 router.post('/donor/login',function (req,res) {
-    user.findOne({CNIC:req.body.CNIC},function(err,user) {
+    donor.findOne({CNIC:req.body.CNIC},function(err,user) {
         if (err)
             return res.status(500).send({message: 'server error'});
 
@@ -43,7 +47,7 @@ router.post('/donor/login',function (req,res) {
             user.comparePassword(req.body.password, function(err, isMatch) {
                 if (isMatch) {
                     const token = jwt.sign({
-                        CNIC:user.CNIC,
+                        Donor:user,
                     },process.env.PWD,{
                         expiresIn: "1h"
                     });
@@ -77,16 +81,19 @@ router.get('/testToken',user_middleware.api_auth,function(req,res){
 
 
 router.post('/donation',user_middleware.api_auth,function (req,res) {
-    //Todo: Add donations to parity using web3
-
-    // user.updateOne({CNIC:req.UserData.CNIC},{$push: { donations: req.body.id}},function (err,user) {
-    //     if (err)
-    //         return res.status(500).send({message: 'Server Error'});
-    //
-    //     else return res.status(200).send({message: 'Donation id is saved'});
-    // });
-
-    return res.status(200).send({message: 'success'});
+    req.UserData.Donor.push({
+        CNIC:req.body.CNIC,
+        name:req.body.name,
+        amount:req.body.amount,
+        timestamp:req.body.timestamp,
+        signer:{id:"0x56567af4", name:"Umer"},
+    }).save(function(err) {
+        if (err) {
+            console.log(err);
+            return res.status(500).send({message: 'error'});
+        }
+        return res.status(200).send({message: 'success'});
+    });
 });
 
 router.get('/donation',user_middleware.api_auth,function(req,res){
@@ -113,28 +120,19 @@ router.get('/donation',user_middleware.api_auth,function(req,res){
 });
 
 router.get('/donation/:id',user_middleware.api_auth,function(req,res){
-    //Todo: Retrieve donations from parity using web3
-
-    // user.findOne({_id:req.UserData.userId},function(err,user) {
-    //     if (err)
-    //         return res.status(500).send({message: 'Server Error'});
-    //
-    //     else return res.status(200).send({donation_ids: user.donations});
-    //
-    // });
 
     return res.status(200).send({message: 'success',
-        result:{
-            CNIC:"4257193004533",
-            name:"Tanveer",
-            amount:5765667,
-            timestamp:1555597802,
-            signer:{id:0x56567af4, name:"Umer"},
-            trackingInfo:[{},{},{},{},{}]
-        }});
+        result:req.UserData.Donor.donations.id(req.params.id)
+    });
+
+    //     _id:"648723",
+    //         amount:5765667,
+    //     timestamp:1555597802,
+    //     signer:{id:"0x56567af4", name:"Umer"},
+
 });
 
-router.post('/otp',user_middleware.api_auth,function (req,res) {
+router.post('/pay',user_middleware.api_auth,function (req,res) {
     //Todo: Add transaction to parity using web3
 
     // user.updateOne({CNIC:req.UserData.CNIC},{$push: { donations: req.body.id}},function (err,user) {
@@ -215,7 +213,15 @@ router.post('/receivable',user_middleware.api_auth,function (req,res) {
     //     else return res.status(200).send({message: 'Donation id is saved'});
     // });
 
-    return res.status(200).send({message: 'success'});
+    return res.status(200).send({message: 'success', transactions: [
+            {id:"2441",date:"Monday, Apr 23, 2019",amount:45},
+            {id:"3567",date:"Tuesday, Feb 18, 2019",amount:2638},
+            {id:"4324",date:"Friday, May 12, 2019",amount:863},
+            {id:"42344",date:"Thursday, June 9, 2019",amount:43},
+            {id:"6575",date:"Sunday, Sept 16, 2019",amount:454978},
+            {id:"25632",date:"Friday, Oct 1, 2019",amount:79449},
+            {id:"3456",date:"Saturday, Dec 5, 2019",amount:46236}
+        ]});
 });
 
 router.get('/receivable',user_middleware.api_auth,function(req,res){
