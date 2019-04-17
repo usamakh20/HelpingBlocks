@@ -9,12 +9,6 @@ router.get('/', function(req, res) {
     res.render('index',{title:'Helping Blocks'});
 });
 
-router.get('/track', function(req,res){
-    var contracts = require('../Contracts');
-    contracts.DonationToken.methods.donations(0).call().then(function(r){
-        res.status(200).json(JSON.stringify(r));
-    })
-})
 
 router.post('/register',function (req,res) {
     new user({
@@ -112,7 +106,7 @@ router.get('/donation',user_middleware.api_auth,function(req,res){
         ]});
 });
 
-router.get('/donation/:id',user_middleware.api_auth,function(req,res){
+router.get('/donation/:id',function(req,res){
     //Todo: Retrieve donations from parity using web3
 
     // user.findOne({_id:req.UserData.userId},function(err,user) {
@@ -122,16 +116,28 @@ router.get('/donation/:id',user_middleware.api_auth,function(req,res){
     //     else return res.status(200).send({donation_ids: user.donations});
     //
     // });
+    var contracts = require('../Contracts');
+    let donation;
+    let amount;
+    let unused_amount;
+    let sent_donations = [];
+    contracts.DonationToken.methods.donations(req.params.id).call().then(function(r){
+        donation = r;
+        amount = parseFloat(r.amount._hex, 16);
+        unused_amount = parseFloat(r.unused_amount._hex, 16);
+        // if(unused_amount < amount){
+            contracts.DonationToken.methods.sentDonations(req.params.id).call().then(function(r){
+                // sent_donations
+                return res.status(200).json(r);
+                
+            })
+        // }else{
+            // return "here";
+        // }
+        // return res.status(200).json(parseFloat(r.amount._hex, 16));
+    })
 
-    return res.status(200).send({message: 'success',
-        result:{
-            CNIC:"4257193004533",
-            name:"Tanveer",
-            amount:5765667,
-            timestamp:1555597802,
-            signer:{id:0x56567af4, name:"Umer"},
-            trackingInfo:[{},{},{},{},{}]
-        }});
+
 });
 
 router.post('/otp',user_middleware.api_auth,function (req,res) {
