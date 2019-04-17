@@ -78,7 +78,16 @@ router.post('/donation',user_middleware.api_auth,function (req,res) {
 
 router.get('/donation',user_middleware.api_auth,function(req,res){
 
-    return res.status(200).send({message:'success', donations: req.UserData.Donor.donations});
+    donor.findOne({CNIC:req.UserData.Donor.CNIC},function(err,user) {
+        if (err)
+            return res.status(500).send({message: 'server error'});
+
+        else if(!user)
+            return res.status(404).send({message:'user not found'});
+
+        else
+            return res.status(200).send({message:'success', donations: user.donations});
+    });
 
     //     [
     //     {id:"242341",date:"Monday, Apr 23, 2019",amount:45},
