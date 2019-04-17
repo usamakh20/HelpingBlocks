@@ -170,6 +170,8 @@ function retrieve(phone){
 
         else if(!user)
             console.log('user not found');
+
+        else console.log(user)
     })
 }
 
