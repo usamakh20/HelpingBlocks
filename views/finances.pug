@@ -86,42 +86,16 @@ block content
               table.table.table-hover.table-striped
                 thead
                   th ID
-                  th Name
-                  th Date
+                  th Donor Name
+                  th Donor CNIC
                   th Amount
-                  th Transaction Code
                 tbody
-                  tr
-                    td 1
-                    td Donor 1
-                    td Date 1
-                    td Amount 1
-                    td Code 1
-                  tr
-                    td 2
-                    td Donor 2
-                    td Date 2
-                    td Amount 2
-                    td Code 2
-                  tr
-                    td 3
-                    td Donor 3
-                    td Date 3
-                    td Amount 3
-                    td Code 3
-                  tr
-                    td 4
-                    td Donor 4
-                    td Date 4
-                    td Amount 4
-                    td Code 4
-                  tr
-                    td 5
-                    td Donor 5
-                    td Date 5
-                    td Amount 5
-                    td Code 5
-
+                  each val,index in donations
+                    tr
+                      td=index
+                      td=val.name
+                      td=val.CNIC
+                      td=val.amount
 
   script.
     $().ready(function(){

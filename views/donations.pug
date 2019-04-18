@@ -137,95 +137,33 @@ block content
           button.btn.btn-info.btn-fill.pull-right(type='submit') Create List
           .clearfix
   .content
-    .row
-      .col-md-12
-        .card
-          .header
-            h4.title Donations List 1
-            div
-              p.category List of Recipients
-              button.refbtn.btn-info.btn-fill.pull-left Refresh
-              <span>  </span>
-              button.paybtn.btn-info.btn-fill.pull-right Pay All
-          .content.table-responsive.table-full-width
-            table.table.table-hover.table-striped
-              thead
-                th ID
-                th Name
-                th Phone
-                th CNIC
-                th Address
-                th Action
-              tbody
-                tr
-                  td 1
-                  td(contenteditable='false') Name 1
-                  td(contenteditable='false') 03000000000
-                  td 0000-0000000-0
-                  td Address 1
-                  td
-                    button.editbtn.btn-warning.btn-fill Edit
-                    <span>  </span>
-                    button.rmvbtn.btn-danger.btn-fill Remove
-                tr
-                  td 2
-                  td(contenteditable='false') Name 2
-                  td(contenteditable='false') 03000000000
-                  td 0000-0000000-0
-                  td Address 2
-                  td
-                    button.editbtn.btn-warning.btn-fill Edit
-                    <span>  </span>
-                    button.rmvbtn.btn-danger.btn-fill Remove
-                tr
-                  td 3
-                  td(contenteditable='false') Name 3
-                  td(contenteditable='false') 03000000000
-                  td 0000-0000000-0
-                  td Address 3
-                  td
-                    button.editbtn.btn-warning.btn-fill Edit
-                    <span>  </span>
-                    button.rmvbtn.btn-danger.btn-fill Remove
-                tr
-                  td 4
-                  td(contenteditable='false') Name 4
-                  td(contenteditable='false') 03000000000
-                  td 0000-0000000-0
-                  td Address 4
-                  td
-                    button.editbtn.btn-warning.btn-fill Edit
-                    <span>  </span>
-                    button.rmvbtn.btn-danger.btn-fill Remove
-  .content
     .container-fluid
       .row
         .col-md-12
-          .card
-            .header
-              h4.title Donations List 2
-              p.category List of Recipients
-              button.refbtn.btn-info.btn-fill.pull-left Refresh
-              <span>  </span>
-              button.paybtn.btn-info.btn-fill.pull-right Pay All
-            .content.table-responsive.table-full-width
-              table.table.table-hover.table-striped
-                thead
-                  th ID
-                  th Name
-                  th Phone
-                  th CNIC
-                  th Address
-                  th Action
-                tbody
-                each row in table
-                  tr
-                  each clm in row
-                    td #{clm}
-                  td
-                    button.editbtn.btn-warning.btn-fill Edit
-                    <span>  </span>
-                    button.rmvbtn.btn-danger.btn-fill Remove
+          each val,index in donationLists
+            .card
+              .header
+                h4.title=val.name
+                p.category List of Recipients
+                button.refbtn.btn-info.btn-fill.pull-left Refresh
+                <span>  </span>
+                button.paybtn.btn-info.btn-fill.pull-right Pay All
+              .content.table-responsive.table-full-width
+                table.table.table-hover.table-striped
+                  thead
+                    th Name
+                    th Phone
+                    th CNIC
+                  tbody
+                    each row in val.items
+                      tr
+                        td #{row.name}
+                        td #{row.phone}
+                        td #{row.cnic}
+                      td
+                        button.editbtn.btn-warning.btn-fill Edit
+                        <span>  </span>
+                        button.rmvbtn.btn-danger.btn-fill Remove
                   //- tr
                   //-   td 1
                   //-   td(contenteditable='false') Name 1

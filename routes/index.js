@@ -108,26 +108,70 @@ router.get('/maps',user_middleware.auth,function(req,res){
     res.render('maps');
 });
 
-
-router.get('/finances',user_middleware.auth,function(req,res){
-    res.render('finances');
+// ,user_middleware.auth
+router.get('/finances',function(req,res){
+    var contracts = require('../Contracts');
+    var donations_counter;
+    var donations = [];
+    contracts.DonationToken.methods.donations_counter().call().then(function(r){
+        donations_counter = contracts.web3.utils.hexToNumber(r);
+        (async function loop() {
+            for(let i = 0; i < donations_counter; i++){
+                await contracts.DonationToken.methods.donations(i).call().then(function(r){
+                    // res.json(r);
+                    r.amount = contracts.web3.utils.hexToNumber(r.amount)
+                    donations.push(r);
+                })
+            }
+            res.render('finances', {donations});
+        })()
+    })
 });
 router.post('/finances',user_middleware.auth,function(req,res){
     res.redirect('finances');
 });
 
 
+// user_middleware.auth,
+router.get('/donations',function(req,res){
+    contracts = require('../Contracts');
+    var donationListsCount;
+    var donationLists = [];
+    contracts.DonationManager.methods.donationListsCount().call().then(r=>{
+        donationListsCount = contracts.web3.utils.hexToNumber(r);
+        (async function loop() {
+            for(let i =0; i < donationListsCount; i++){
+                await contracts.DonationManager.methods.donationLists(i).call().then(async function(r){ 
+                    donationLists[i] = {};
+                    donationLists[i].name = r;
+                    donationLists[i].items = [] 
+                    await contracts.DonationManager.methods.getDonationListItems(i).call().then(async function(r){
+                        for(let k = 0; k < r.length; k++){
+                            await contracts.DonationManager.methods.getRecipientByAddress(r[k]).call().then(async function(r){
+                                await contracts.DonationManager.methods.recipients(contracts.web3.utils.hexToNumber(r)).call().then(async function(r){
+                                    // res.json(r);
+                                    donationLists[i].items.push({name: r.name, phone: r.phone, cnic: r.cnic} )
+                                });
+                            });
+                        }
+                    })
 
-router.get('/donations',user_middleware.auth,function(req,res){
-    res.render('donations',
-        {
-            table:[
-                {ID:"1", name:"oName 1", contact:"oContact 1", email:"oEmail 1", city:"oCity 1"},
-                {ID:"2", name:"oName 2", contact:"oContact 2", email:"oEmail 2", city:"oCity 2"},
-                {ID:"3", name:"oName 3", contact:"oContact 3", email:"oEmail 3", city:"oCity 3"},
-                {ID:"4", name:"oName 4", contact:"oContact 4", email:"oEmail 4", city:"oCity 4"}
-            ]
-        });
+                })
+            }
+            // res.json(donationLists);
+            res.render('donations', {donationLists});
+        })();
+    });
+
+    // res.render('donations',
+    //     {
+    //         table:[
+    //             {ID:"1", name:"oName 1", contact:"oContact 1", email:"oEmail 1", city:"oCity 1"},
+    //             {ID:"2", name:"oName 2", contact:"oContact 2", email:"oEmail 2", city:"oCity 2"},
+    //             {ID:"3", name:"oName 3", contact:"oContact 3", email:"oEmail 3", city:"oCity 3"},
+    //             {ID:"4", name:"oName 4", contact:"oContact 4", email:"oEmail 4", city:"oCity 4"}
+    //         ]
+    //     });
 });
 router.post('/donations',user_middleware.auth,function(req,res){
     res.render('donations',
