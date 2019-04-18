@@ -61,13 +61,14 @@ router.get('/track',user_middleware.api_auth,function(req,res){
 
 
 router.post('/donation',user_middleware.api_auth,function (req,res) {
-    req.UserData.Donor.push({
-        CNIC:req.body.CNIC,
-        name:req.body.name,
-        amount:req.body.amount,
-        timestamp:req.body.timestamp,
-        signer:{id:"0x56567af4", name:"Umer"},
-    }).save(function(err) {
+    donor.update({CNIC:req.UserData.Donor.CNIC},{$push:
+            {donations:{
+                    id:req.body.id,
+                    amount:req.body.amount,
+                    timestamp:req.body.timestamp,
+                }
+            }
+    },function(err) {
         if (err) {
             console.log(err);
             return res.status(500).send({message: 'error'});
@@ -78,18 +79,27 @@ router.post('/donation',user_middleware.api_auth,function (req,res) {
 
 router.get('/donation',user_middleware.api_auth,function(req,res){
 
-    return res.status(200).send({message:'success', donations: req.UserData.Donor.donations});
+    donor.findOne({CNIC:req.UserData.Donor.CNIC},function(err,user) {
+        if (err)
+            return res.status(500).send({message: 'server error'});
 
-        //     [
-        //     {id:"242341",date:"Monday, Apr 23, 2019",amount:45},
-        //     {id:"337567",date:"Tuesday, Feb 18, 2019",amount:2638},
-        //     {id:"4324",date:"Friday, May 12, 2019",amount:863},
-        //     {id:"312",date:"Wednesday, July 2, 2019",amount:3754},
-        //     {id:"4234244",date:"Thursday, June 9, 2019",amount:43},
-        //     {id:"65",date:"Sunday, Sept 16, 2019",amount:454978},
-        //     {id:"26545632",date:"Friday, Oct 1, 2019",amount:79449},
-        //     {id:"346563665",date:"Saturday, Dec 5, 2019",amount:46236}
-        // ]
+        else if(!user)
+            return res.status(404).send({message:'user not found'});
+
+        else
+            return res.status(200).send({message:'success', donations: user.donations});
+    });
+
+    //     [
+    //     {id:"242341",date:"Monday, Apr 23, 2019",amount:45},
+    //     {id:"337567",date:"Tuesday, Feb 18, 2019",amount:2638},
+    //     {id:"4324",date:"Friday, May 12, 2019",amount:863},
+    //     {id:"312",date:"Wednesday, July 2, 2019",amount:3754},
+    //     {id:"4234244",date:"Thursday, June 9, 2019",amount:43},
+    //     {id:"65",date:"Sunday, Sept 16, 2019",amount:454978},
+    //     {id:"26545632",date:"Friday, Oct 1, 2019",amount:79449},
+    //     {id:"346563665",date:"Saturday, Dec 5, 2019",amount:46236}
+    // ]
 });
 
 router.get('/donation/:id',function(req,res){

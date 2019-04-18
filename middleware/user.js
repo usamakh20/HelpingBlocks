@@ -9,6 +9,7 @@ exports.api_auth = (req,res,next) => {
         console.log(req.UserData);
         next()
     } catch (error) {
+        console.log(error);
         return res.status(401).json({
             message: 'auth failed'
         });

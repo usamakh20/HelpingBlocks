@@ -7,9 +7,9 @@ const userSchema = new mongoose.Schema({
     password: {type: String, required:true},
     name: String,
     donations: [{
+        id:String,
         amount:Number,
         timestamp:Number,
-        signer:{id:String, name:String},
     }]
 });
 
